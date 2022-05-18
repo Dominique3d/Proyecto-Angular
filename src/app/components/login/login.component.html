@@ -1,0 +1,62 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="color-card card text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 style="color:black" class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
+                <p style="color:black" class="text-dark-50 mb-5">Porfavor ingresa tu correo y contraseña!</p>
+  
+                <form [formGroup]="formInscripcion" (ngSubmit)="onRegister($event)" class="example-form">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input style="color: black;" class="input-color" type="email" matInput type="email"
+                      formControlName="email" placeholder="Ej. pat@ejemplo.com">
+                    <!-- <mat-hint style="color: white;" >Errors appear instantly!</mat-hint> -->
+                    <mat-error
+                      *ngIf="this.formInscripcion.get('email')!.hasError('email') && this.formInscripcion.get('email')!.dirty">
+                      Ingrese un correo valido
+                    </mat-error>
+                    <mat-error
+                      *ngIf="this.formInscripcion.get('email')!.hasError('required') && this.formInscripcion.get('email')!.dirty">
+                      El correo es <strong>requerido</strong>
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input style="color: black;" formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                    <button class="eye-button" mat-icon-button matSuffix (click)="hide = !hide"
+                      [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error
+                      *ngIf="this.formInscripcion.get('password')!.hasError('password') && this.formInscripcion.get('password')!.dirty">
+                      Ingrese minimo 5 caracteres
+                    </mat-error>
+                  </mat-form-field>
+                  <p style="color:black" class="text small mb-5 pb-lg-2"><a class="click-text fw-bold"
+                      href="#!">¿Olvidaste tu contraseña?</a></p>
+  
+                  <button [disabled]="!this.formInscripcion.valid" class="btn btn-outline-dark btn-lg px-5" type="submit">Ingresar</button>
+                </form>
+                <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                  <a href="#!" class="text-black"><i class="fab fa-facebook-f fa-lg"></i></a>
+                  <a href="#!" class="text-black"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                  <a href="#!" class="text-black"><i class="fab fa-google fa-lg"></i></a>
+                </div>
+              </div>
+  
+              <div>
+                <p style="color:black" class="mb-0">¿No tienes cuenta? <a href="#!"
+                    class="click-text fw-bold">Registrate</a></p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
