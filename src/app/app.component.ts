@@ -21,15 +21,18 @@ export class AppComponent {
   }
 
   cambiarFondo(ruta: string){
+    let doc = document.getElementById("home-1");
     switch (ruta) {
       case ("/home" || "/curso-claseB"): {
-        let doc = document.getElementById("home-1");
         doc?.setAttribute("style", 'background-image: url("/assets/Background-home-1.jpg");');
         break;
       }
       case ("/formulario"): {
-        let doc = document.getElementById("home-1");
         doc?.setAttribute("style", 'background-image: url("/assets/fondo-formulario.png");');
+        break;
+      }
+      default: {
+        doc?.setAttribute("style", 'background-image: url("/assets/Background-home-1.jpg");');
         break;
       }
     }
