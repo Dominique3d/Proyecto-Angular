@@ -13,7 +13,7 @@ const APP_ROUTES: Routes = [
     { path: 'curso-claseB', component: CursoClaseBComponent},
     { path: 'login', component: LoginComponent},
     { path: 'form-component', component: FormPagoComponent},
-    { path: 'formulario', component: FormularioComponent, data: {imageUrl:'/assets/fondo-formulario.png'}},
+    { path: 'formulario', component: FormularioComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

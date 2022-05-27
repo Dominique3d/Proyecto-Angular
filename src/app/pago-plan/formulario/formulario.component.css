@@ -21,3 +21,8 @@
     max-width: 100%;
     height: auto; 
 } */
+
+body{
+    display: block;
+    size: 100%;
+}
