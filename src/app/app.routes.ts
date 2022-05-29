@@ -4,6 +4,7 @@ import { CursoClaseBComponent } from "./components/curso-clase-b/curso-clase-b.c
 import { LoginComponent } from "./components/login/login.component";
 import { FormPagoComponent } from "./components/form-pago/form-pago.component";
 import { FormularioComponent } from "./pago-plan/formulario/formulario.component";
+import { ContactoComponent } from "./contacto/contacto.component";
 
 const APP_ROUTES: Routes = [
 
@@ -13,7 +14,8 @@ const APP_ROUTES: Routes = [
     { path: 'curso-claseB', component: CursoClaseBComponent},
     { path: 'login', component: LoginComponent},
     { path: 'form-component', component: FormPagoComponent},
-    { path: './formulario', component: FormularioComponent},
+    { path: 'formulario', component: FormularioComponent},
+    { path: 'contacto', component: ContactoComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
