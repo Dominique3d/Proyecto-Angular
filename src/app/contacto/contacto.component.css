@@ -1,0 +1,55 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+div#header_background{
+    background-size: cover;
+    width:auto;
+    height:300px;
+    background-image: url(https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-vehiculos-fullequipados-resize.jpg);
+}
+
+.header_text{
+    margin: 0px 1100px 50px 90px; 
+    padding: 20px;
+    color: #ffffff;
+    font-size: 200%;
+    text-align: center;
+    line-height:50px;
+    text-transform: uppercase;
+}    
+
+div#formulario_background{
+    margin:auto; 
+    background-size: cover;
+    width:auto;
+    height:900px;
+    background-image: url(https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-pago-recibido-clase-b.jpg);
+}
+
+.head_form{
+    margin: 0px 90px 10px 500px;  
+    padding: 30px;
+    color: #ffffff; 
+    text-transform: uppercase; 
+    font-size: 200%; 
+}
+
+.wpcf7{
+    margin: 0px 90px 50px 500px; 
+    color: #ffffff;
+    text-align: left;
+    float: left;
+    line-height:50px;
+    font-size: 100%;
+}
+
+div#form_text{
+    margin: 0px 90px 50px 500px; 
+    color: #ffffff;
+    text-align: left;
+    float: right;
+    line-height:50px;
+    font-size: 100%;
+}
