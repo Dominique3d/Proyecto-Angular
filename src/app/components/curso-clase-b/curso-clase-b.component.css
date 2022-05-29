@@ -1,3 +1,7 @@
+body{
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+}
 body {
     font: 400 14px Open Sans, Arial, Helvetica, sans-serif;
     color: #777777;
