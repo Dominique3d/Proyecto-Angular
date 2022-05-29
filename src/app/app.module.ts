@@ -21,6 +21,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormPagoComponent } from './components/form-pago/form-pago.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FormPagoComponent } from './components/form-pago/form-pago.component';
     HomeComponent,
     CursoClaseBComponent,
     LoginComponent,
-    FormPagoComponent
+    FormPagoComponent,
+    ContactoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
