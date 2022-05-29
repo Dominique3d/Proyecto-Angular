@@ -1,0 +1,170 @@
+.home-1{
+  background: url(\src\assets\Background-home-1.jpg) no-repeat center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  /* height: 3000px; */
+}
+.home-2{
+  background: url(\src\assets\didaktika-conductores-autoescuela-sesion-psicotecnico.jpg) no-repeat center fixed;
+  background-size: cover;
+width: 1920px;
+height: 330px;
+/* height: 3000px; */
+}
+.home-3{
+  background: url(\src\assets\didaktika-conductores-autoescuela-experiencia.jpg) no-repeat center fixed;
+  background-size: cover;
+width: 1920px;
+height: 375px;
+/* height: 3000px; */
+}
+.works{
+  background: url(\src\assets\didaktika-conductores-autoescuela-experiencia.jpg) no-repeat center fixed;
+  background-size: cover;
+width: 100%;
+height: 100%;
+/* height: 3000px; */
+}
+
+
+.aprendi {
+  background-color: white;
+  height: 480px;
+}
+.aprendi-title {
+  padding-top: 50px;
+  text-align: center;
+  font-size: xx-large;
+  color: #006e9a;;
+  margin-bottom: 40px;
+}
+.title-text {
+  position: absolute;
+  top: 431px;
+  left: 260px;
+  height: 215px;
+  width: 827px;
+}
+
+.title-psico {
+  position: absolute;
+  top: 950px;
+  left: 30px;
+  height: 215px;
+  width: 795px;
+
+}
+.button-psico {
+
+  background-color: transparent;
+  border-color: white;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: absolute;
+  top: 1175px;
+  left: 642px;
+  font-size: 16px;
+  padding: 11px;
+  width: 148px;
+  border-radius: 8px;
+
+}
+.experiencia {
+  color: white;
+  text-align: center;
+  font-size: xxx-large;
+padding-top: 80px;
+}
+.cont-exp {
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-left: 210px;
+  text-align: center;
+}
+.title-text-2 {
+  position: absolute;
+  top: 410px;
+  left: 600px;
+  height: 119px;
+  width: 705px;
+}
+.title-text-3 {
+    position: absolute;
+    top: 410px;
+    left: 600px;
+    height: 119px;
+    width: 705px;
+}
+.button-subtext {
+  position: absolute;
+  top: 665px;
+  left: 774px;
+  height: 50px;
+  width: 200px;
+
+}
+
+.button {
+  border-radius: 30px;
+  background-color: transparent;
+  border-color: white;
+  color: #FFFFFF;
+  font-size: 24px;
+  padding: 0px;
+  width: 255px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  z-index: 7;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.pq {
+  height: 800px;
+}
+.pq-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #006e9a;
+  font-size: xxx-large;
+  font-weight: 700;
+  padding-top: 50px;
+}
+
+.pq-subtitle {
+  text-align: center;
+  text-transform: uppercase;
+  color: #006e9a;
+  font-size: 34px;
+  padding-top: 72px;
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+/* Ultimo carousel */
