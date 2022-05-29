@@ -1,32 +1,188 @@
-<!--
 
-<div class="hola">
-  holamundo
-</div>
 
- <div class="home-1">
-  <div class="container">
-    <router-outlet></router-outlet>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" style="height: 100%;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
-</div>
-<div class="home-2"></div>
-<div class="home-3"></div> -->
+  <div class="carousel-inner">
+    <div  style=   "width: fit-content;
+    height: 937px; overflow:hidden; "class="carousel-item active">
+      <img  src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-curso-claseb-autoescuela-resize.jpg"  class="d-block w-100" alt="...">
 
-<div class="home-1">
- <img src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-clasebtxt-autoescuela.png" alt="">
+        <img class=" title-text animate__animated animate__fadeInLeft" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-clasebtxt-autoescuela.png" alt="">
+
+      <button class="button button-subtext animate__animated animate__fadeInRight" [routerLink]="['curso-claseB']"><span>Comienza Ahora</span></button>
+    </div>
+
+    <div style="height: 937px; background-color:rgb(102, 158, 53);" class="carousel-item">
+      <img style="width: 1360px !important; height: 800px !important;  display: block; margin-left: auto; margin-right: auto; margin-top: 80px; margin-bottom: auto; width: 50%;"
+      src="https://www.didaktikaconductores.cl/wp-content/uploads/2020/04/MODERNA-PLATAFORMA-ON-LINE-1.png" class="center  w-100" alt="...">
+    </div>
+    <div  style="height: 937px; width:fit-content; " class="carousel-item">
+      <img  src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-sala-de-clases-autoescuela-resize.jpg" class="d-block" alt="...">
+      <div class="w3-container">
+        <img class=" title-text-2 animate__animated animate__fadeInLeft" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-moderna-infraestructura.png" alt="">
+      </div>
+    </div>
+    <div  style="height: 937px; width:fit-content; "class="carousel-item">
+      <img src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-vehiculos-fullequipados-resize.jpg" class="d-block w-100" alt="...">
+      <div class="w3-container">
+        <img class=" title-text-3 animate__animated animate__fadeInLeft" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-vehiculos-equipados.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
 <div class="home-2">
-<img src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-escuela-de-conductores-sesion-psicotecnico-autoescuela.png" alt="">
+<img  class="title-psico" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-escuela-de-conductores-sesion-psicotecnico-autoescuela.png" alt="">
+<button class="button-psico" [routerLink]="['curso-claseB']" >  Leer Más </button>
+</div>
+<div class="pq">
+  <div class="pq-title">
+    ¿Por qué Elegirnos ?
+    <div class="pq-subtitle">
+      Innovación + Tecnología + Orientación al cliente + Accesibilidad
+    </div>
+  </div>
+
+<!-- CARRUSEL PQ  -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="https://www.youtube.com/watch?v=pp1Ozt8F2sY"  >
+        <img style="padding-left: 10px; margin-right: 60px;" width="920" height="518" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-testimonio-angelaramirez-autoescuela.jpg" class="  .d-block and .w-100 attachment-full" alt="" srcset="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-testimonio-angelaramirez-autoescuela.jpg 920w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-testimonio-angelaramirez-autoescuela-600x338.jpg 600w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-testimonio-angelaramirez-autoescuela-300x169.jpg 300w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-testimonio-angelaramirez-autoescuela-768x432.jpg 768w" sizes="(max-width: 920px) 100vw, 920px"></a>
+        <a href="https://www.youtube.com/watch?v=lKxhkI0-mB8" class="prettyPhoto" rel="prettyPhoto[image]">
+          <img width="920" height="518" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-paulabadilla-1.jpg" class="attachment-full  .d-block and .w-100" alt="" srcset="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-paulabadilla-1.jpg 920w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-paulabadilla-1-600x338.jpg 600w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-paulabadilla-1-300x169.jpg 300w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-paulabadilla-1-768x432.jpg 768w" sizes="(max-width: 920px) 100vw, 920px"></a>
+    </div>
+    <div class="carousel-item">
+      <a href="https://www.youtube.com/watch?v=c1vwAigj24c">
+        <img style="padding-left: 10px; margin-right: 60px;" width="920" height="518" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-experiencia.jpg" class="attachment-full  .d-block and .w-100" alt="" srcset="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-experiencia.jpg 920w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-experiencia-600x338.jpg 600w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-experiencia-300x169.jpg 300w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-testimonio-experiencia-768x432.jpg 768w" sizes="(max-width: 920px) 100vw, 920px"></a>
+        <a href="https://www.youtube.com/watch?v=EKRsFsxkl0I" >
+          <img  width="920" height="518" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-autoescuela-testimonio.jpg" class="attachment-full  .d-block and .w-100" alt="" srcset="https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-autoescuela-testimonio.jpg 920w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-autoescuela-testimonio-600x338.jpg 600w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-autoescuela-testimonio-300x169.jpg 300w, https://www.didaktikaconductores.cl/wp-content/uploads/2018/04/didaktika-conductores-autoescuela-testimonio-768x432.jpg 768w" sizes="(max-width: 920px) 100vw, 920px"></a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
 
 </div>
+
 
 <div class="home-3">
-  <div class="elegirnos">
-    pq elegirnos
+<div class="experiencia">
+<a> NUESTRA </a>   <a style="font-weight: 700;"> EXPERIENCIA</a>
+</div>
+<div style="color: white;" class="cont-exp">
+  <div style="padding-top: 70px;" class="row">
+    <div class="col">
+      <i class="fa fa-graduation-cap" style=" font-size: 40px;"></i>
     </div>
+    <div class="col">
+      <i class="fa fa-car" style=" font-size: 40px;"></i>
+    </div>
+    <div class="col">
+      <i class="fa fa-bolt" style=" font-size: 40px;"></i>
+    </div>
+    <div class="col">
+      <i class="fa fa-check-square-o" style="font-size: 40px;"></i>
+    </div>
+    </div>
+    <div  style="padding-top: 35px;" class="row">
+      <div class="col">
+      <a style="font-size: xx-large;" > + </a> <a style="font-size: xx-large; font-weight: 500;"> 1,425 </a>
+      </div>
+      <div class="col">
+        <a style="font-size: xx-large; font-weight: 500;"> 18.466 </a> <a style="font-size: xx-large;"> horas </a>
+      </div>
+      <div class="col">
+        <a style="font-size: xx-large; font-weight: 500;"> 13.596 </a> <a style="font-size: xx-large;"> KM </a>
+      </div>
+      <div class="col">
+        <a style="font-size: xx-large; font-weight: 500;" > 90 </a> <a style="font-size: xx-large;">%</a>
+      </div>
+      </div>
+      <div style="padding-top: 35px;" class="row">
+        <div class="col">
+         <a style="font-size:x-large;"> Alumnos </a>
+        </div>
+        <div class="col">
+          <a style="font-size:x-large;"> Al Volante </a>
+        </div>
+        <div class="col">
+          <a style="font-size:x-large;"> Recorridos </a>
+        </div>
+        <div class="col">
+          <a style="font-size:x-large;"> Aprobación </a>
+        </div>
+        </div>
+</div>
+
+
 
 </div>
 <div class="aprendi">
-  Aprendi con
+  <div class="aprendi-title">
+    <a>#</a> <a style="font-weight: 700;">APRENDÍ CON TECNOLOGÍA</a>
+  </div>
+  <div id="carouselExampleSlidesOnly" style=" background-color: #006e9a;" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img  style="width: 317px; padding-left: 5px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-1.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-2.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-3.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-4.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-5.jpg">
+        <img style="width: 317px; padding-right:  5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-6.jpg">
+      </div>
+
+      <div class="carousel-item">
+        <img  style="width: 317px; padding-left: 5px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-7.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-8.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-9.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-10.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-11.jpg">
+        <img style="width: 317px; padding-right:  5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-12.jpg">
+      </div>
+      <div class="carousel-item">
+        <img  style="width: 317px; padding-left: 5px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-13.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-14.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-15.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-16.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-17.jpg">
+        <img style="width: 317px; padding-right:  5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-18.jpg">
+      </div>
+      <div class="carousel-item">
+        <img  style="width: 317px; padding-left: 5px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-19.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-20.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-21.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-22.jpg">
+        <img  style="width: 317px; padding-right: 5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-23.jpg">
+        <img style="width: 317px; padding-right:  5px;" src="https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-egresados-24.jpg">
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
 

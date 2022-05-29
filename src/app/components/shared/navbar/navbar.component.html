@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light nav-background nav-padding">
+<!-- <nav class="navbar navbar-expand-lg navbar-light nav-background nav-padding">
     <div class="container-fluid">
         <a href="#" [routerLink]="['home']" class="navbar-brand">
             <img src="assets/logo-1.png" alt="CoolBrand">
@@ -15,4 +15,23 @@
             </div>
         </div>
     </div>
+</nav> -->
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" >
+  <div class="container-fluid">
+    <a href="#" [routerLink]="['home']" class="navbar-brand">
+      <img src="assets/logo-1-blanco.png" alt="CoolBrand">
+  </a>
+  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto mb-2 mb-lg-0" >
+        <a  style="margin-left: 25px;" href="#" [routerLink]="['home']"  class="nav-item nav-link active nav-font">INICIO</a>
+        <a  style="margin-left: 25px;"href="#" [routerLink]="['curso-claseB']" class="nav-item nav-link active nav-font">CURSO CLASE B</a>
+        <a  style="margin-left: 25px;"href="#" [routerLink]="['contacto']" class="nav-item nav-link active nav-font">CONTACTO</a>
+        <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">MI CUENTA</a>
+    </div>
+</div>
+  </div>
 </nav>
