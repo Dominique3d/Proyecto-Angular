@@ -1,7 +1,35 @@
+
+body{
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  background: url(\src\assets\autos.png) no-repeat center fixed;
+  background-size: cover;
+  width: 100%;
+  width: 100%;
+  min-height: 900px;
+  max-height: 2000px;
+}
+#ingresar{
+  background-color: rgb(39, 61, 188); 
+  color: white;
+  opacity: 1;
+}
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
+  }
+  .card {
+    border-color: white;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    border-width: 3px;
+    border-radius: 10px;
+    height: max-content;
+    opacity: 0.85;
+  
+
   }
   
   .example-full-width {
@@ -23,9 +51,4 @@
     text-decoration: none !important;
   }
   
-  ::placeholder {
-    color: rgba(0, 0, 0, 0.431) !important;
-  }
-  .color-card{
-    background-color: #ffffff !important;
-  }
+

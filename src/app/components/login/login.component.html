@@ -1,8 +1,11 @@
+<body>
+
 <section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
+    <div class="container  h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="color-card card text-white" style="border-radius: 1rem;">
+          <div class="card">
+ 
             <div class="card-body p-5 text-center">
   
               <div class="mb-md-5 mt-md-4 pb-5">
@@ -39,9 +42,11 @@
                   </mat-form-field>
                   <p style="color:black" class="text small mb-5 pb-lg-2"><a class="click-text fw-bold"
                       href="#!">¿Olvidaste tu contraseña?</a></p>
-  
-                  <button [disabled]="!this.formInscripcion.valid" class="btn btn-outline-dark btn-lg px-5" type="submit">Ingresar</button>
-                </form>
+               
+                  
+                      <button [disabled]="!this.formInscripcion.valid" id="ingresar" class="btn btn-outline-dark btn-lg px-5 " type="submit">Ingresar</button>
+               
+                    </form>
                 <div class="d-flex justify-content-center text-center mt-4 pt-1">
                   <a href="#!" class="text-black"><i class="fab fa-facebook-f fa-lg"></i></a>
                   <a href="#!" class="text-black"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
@@ -54,9 +59,11 @@
                     class="click-text fw-bold">Registrate</a></p>
               </div>
   
-            </div>
+   
           </div>
         </div>
       </div>
     </div>
+    </div>
   </section>
+</body>
