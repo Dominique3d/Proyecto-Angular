@@ -1,17 +1,14 @@
 .nav-font {
-    font-family: Inter;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    font-weight: 700;
     color: rgba(255,255,255,0.8) !important;
     margin-left: 100px;
 }
 .nav-font:hover{
-    font-family: Inter;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    font-weight: 700;
-    color: rgba(255,255,255,1) !important;
+    color: #176496 !important;
 }
-
 
 .nav-padding {
     padding-top: 16px;
@@ -20,3 +17,22 @@
     padding-left: 16px;
 }
 
+.scroll{
+    background-color: white;
+}
+
+.scroll > div > div > div > a > strong{
+    color: #5DA23E;
+}
+
+.scroll > div > div > div > a > strong:hover{
+    color: #176496 !important;
+}
+
+.scroll > div > a > div{
+    background: url('/assets/logo-1.png');
+}
+
+.noScroll > div > a > div{
+    background: url('/assets/logo-1-blanco.png');
+}

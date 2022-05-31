@@ -33,398 +33,474 @@
 										class="vc_general vc_tta vc_tta-tabs vc_tta-color-grey vc_tta-style-modern vc_tta-shape-rounded vc_tta-spacing-1 vc_tta-tabs-position-left vc_tta-controls-align-left ">
 										<div class="vc_tta-tabs-container">
 											<ul class="vc_tta-tabs-list">
-												<li class="vc_tta-tab vc_active" data-vc-tab=""><a
-														href="#standar" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span class="vc_tta-title-text">PLAN
-															ESTANDAR</span></a></li>
-												<li class="vc_tta-tab" data-vc-tab=""><a
-														href="#full" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span class="vc_tta-title-text">PLAN
-															FULL</span></a></li>
-												<li class="vc_tta-tab" data-vc-tab=""><a
-														href="#premium" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span class="vc_tta-title-text">PLAN
-															PREMIUM</span></a></li>
-												<li class="vc_tta-tab" data-vc-tab=""><a
-														href="#reEntrenamiento" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span class="vc_tta-title-text">PLAN
-															RE-ENTRENAMIENTO</span></a></li>
-												<li class="vc_tta-tab" data-vc-tab=""><a
-														href="#teorico" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span class="vc_tta-title-text">PLAN
-															TEORICO</span></a></li>
-												<li class="vc_tta-tab" data-vc-tab=""><a
-														href="#psico" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span
-															class="vc_tta-title-text">SESIÓN
-															PSICOSENSOMÉTRICO</span></a></li>
-												<li class="vc_tta-tab" data-vc-tab=""><a
-														href="#transferencia" data-vc-tabs=""
-														data-vc-container=".vc_tta"><span
-															class="vc_tta-title-text">PAGOS CON TRANSFERENCIA
-															ELECTRÓNICA</span></a></li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(0)">
+														<button type="button" class="btn btn-light boton-menu">
+															PLAN ESTÁNDAR
+														</button>
+												</li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(1)">
+														<button type="button" class="btn btn-light boton-menu">
+															PLAN FULL
+														</button>
+												</li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(2)">
+														<button type="button" class="btn btn-light boton-menu">
+															PLAN PREMIUM
+														</button>
+												</li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(3)">
+														<button type="button" class="btn btn-light boton-menu">
+															PLAN RE-ENTRENAMIENTO
+														</button>
+												</li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(4)">
+														<button type="button" class="btn btn-light boton-menu">
+															PLAN TEÓRICO
+														</button>
+												</li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(5)">
+														<button type="button" class="btn btn-light boton-menu">
+															SESIÓN PSICOSENSOMÉTRICO
+														</button>
+												</li>
+												<li class="vc_tta-tab vc_active" data-vc-tab=""
+													(click)="desplegarPlan(6)">
+														<button type="button" class="btn btn-light boton-menu">
+															PAGOS CON TRANSFERENCIA ELECTRÓNICA
+														</button>
+												</li>
 											</ul>
 										</div>
 										<div class="vc_tta-panels-container">
 											<div class="vc_tta-panels">
+											<!-- PLAN ESTÁNDAR -->
 												<div class="vc_tta-panel vc_active" id="standar"
-													data-vc-content=".vc_tta-panel-body">
-												
+													data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[0]">
 													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>Plan ESTANDAR</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount">$150.000</span><span
-																		class="pricing-per"></span></div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331;">
+																	<h3>PLAN ESTÁNDAR</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount">
+																			$150.000
+																		</span>
+																	</div>
+																</div>
+																<ul>
+																	<li style="text-align: center;">
+																		<strong>12 Clases
+																			Practicas (45 min)
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			8 Clases Teóricas usando Plataforma on-line
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			2 Sesiones Psicotécnico (30 min)
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Vehículo para rendir examen de conducir
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<a
+																			href="https://www.didaktikaconductores.cl/wp-content/uploads/2021/11/CONTRATO-PLAN-ESTANDAR.pdf">
+																			IMPORTANTE: LEER CONTRATO DE PRESTACION DE SERVICIO
+																		</a>
+																	</li>
+																</ul>
+																<div style="text-align: center;">
+																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																</div>
 															</div>
-
-															<ul>
-																<li style="text-align: center;"><strong>12 Clases
-																		Practicas</strong>&nbsp; (45 min)</li>
-																<li style="text-align: center;"><strong>8 Clases
-																		Teóricas usando Plataforma on-line</strong></li>
-																<li style="text-align: center;"><strong>2 Sesiones
-																		Psicotécnico</strong> (30 min)</li>
-																<li style="text-align: center;"><strong>Vehículo para
-																		rendir examen de conducir&nbsp;</strong></li>
-																<li style="text-align: center;"><a
-																		href="https://www.didaktikaconductores.cl/wp-content/uploads/2021/11/CONTRATO-PLAN-ESTANDAR.pdf">IMPORTANTE:
-																		LEER CONTRATO DE PRESTACION DE SERVICIO</a></li>
-															</ul>
-															<div style="text-align: center;">
-															<a href="/formulario" class="btn btn-primary" style="color: white;">COMPRA ONLINE</a>
-														</div>
-
-														</div>
-													</div>
-												</div>
-												<div class="vc_tta-panel" id="1589225663530-a461e560-97c9"
-													data-vc-content=".vc_tta-panel-body">
-													<div class="vc_tta-panel-heading">
-														<h4 class="vc_tta-panel-title"><a
-																href="#1589225663530-a461e560-97c9" data-vc-accordion=""
-																data-vc-container=".vc_tta-container"><span
-																	class="vc_tta-title-text">PLAN FULL</span></a></h4>
-													</div>
-													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>Plan FULL</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount">$180.000</span><span
-																		class="pricing-per"></span></div>
-															</div>
-
-															<ul>
-																<li style="text-align: center;"><strong>16 Clases
-																		Prácticas</strong>&nbsp;(45 min)</li>
-																<li style="text-align: center;"><strong>8 Clases
-																		Teóricas usando Plataforma on-line</strong></li>
-																<li style="text-align: center;"><strong>2 Sesiones
-																		Psicotécnico</strong> (30 min)</li>
-																<li style="text-align: center;"><strong>Vehículo para
-																		rendir examen de conducir&nbsp;</strong></li>
-																<li style="text-align: center;"><a
-																		href="https://www.didaktikaconductores.cl/wp-content/uploads/2021/11/CONTRATO-PLAN-FULL-1.pdf">IMPORTANTE:
-																		LEER CONTRATO DE PRESTACIÓN DE SERVICIO</a></li>
-															</ul>
-															<form
-																action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																method="post" name="btnPago">
-																<p style="text-align: center;"><strong><input
-																			class="wpcf7-form-control wpcf7-submit"
-																			type="submit"
-																			value="COMPRA ONLINE"></strong></p>
-																<p><input name="buttonId" type="hidden"
-																		value="fe47efc3661251a17c74021af1be4975"></p>
-															</form>
-
-
 														</div>
 													</div>
 												</div>
-												<div class="vc_tta-panel" id="1636032253406-6df6e46d-9a57"
-													data-vc-content=".vc_tta-panel-body">
-													<div class="vc_tta-panel-heading">
-														<h4 class="vc_tta-panel-title"><a
-																href="#1636032253406-6df6e46d-9a57" data-vc-accordion=""
-																data-vc-container=".vc_tta-container"><span
-																	class="vc_tta-title-text">PLAN PREMIUM</span></a>
-														</h4>
-													</div>
+
+												<!-- PLAN FULL -->
+												<div class="vc_tta-panel vc_active" id="standar" data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[1]">
 													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>Plan PREMIUM</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount">$200.000</span><span
-																		class="pricing-per"></span></div>
+														<div class="vc_tta-panel-heading">
+															<h4 class="vc_tta-panel-title">
+																<span class="vc_tta-title-text">
+																	PLAN FULL
+																</span>
+															</h4>
+														</div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331;">
+																	<h3>
+																		PLAN FULL
+																	</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount">
+																			$180.000
+																		</span>
+																	</div>
+																</div>
+																<ul>
+																	<li style="text-align: center;">
+																		<strong>
+																			16 Clases Prácticas (45 min)
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			8 Clases Teóricas usando Plataforma on-line
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			2 Sesiones Psicotécnico (30 min)
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Vehículo para rendir examen de conducir
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<a
+																			href="https://www.didaktikaconductores.cl/wp-content/uploads/2021/11/CONTRATO-PLAN-FULL-1.pdf">
+																			IMPORTANTE: LEER CONTRATO DE PRESTACIÓN DE SERVICIO
+																		</a>
+																	</li>
+																</ul>
+																<div style="text-align: center;">
+																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																</div>
 															</div>
-
-															<ul>
-																<li style="text-align: center;"><strong>20 Clases
-																		Prácticas</strong>&nbsp;(45 min)</li>
-																<li style="text-align: center;"><strong>8 Clases
-																		Teóricas usando Plataforma on-line</strong></li>
-																<li style="text-align: center;"><strong>2 Sesiones
-																		Psicotécnico</strong> (30 min)</li>
-																<li style="text-align: center;"><strong>Vehículo para
-																		rendir examen de conducir&nbsp;</strong></li>
-																<li style="text-align: center;"><a
-																		href="https://www.didaktikaconductores.cl/wp-content/uploads/2021/11/CONTRATO-PLAN-PREMIUM.pdf">IMPORTANTE:
-																		LEER CONTRATO DE PRESTACIÓN DE SERVICIO</a></li>
-															</ul>
-															<form
-																action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																method="post" name="btnPago">
-																<p style="text-align: center;"><strong><input
-																			class="wpcf7-form-control wpcf7-submit"
-																			type="submit"
-																			value="COMPRA ONLINE"></strong></p>
-																<p><input name="buttonId" type="hidden"
-																		value="c08c60e222ba683837545720e9ef0376"></p>
-															</form>
-
-
 														</div>
 													</div>
 												</div>
-												<div class="vc_tta-panel" id="1589227897394-da62ae1a-24e9"
-													data-vc-content=".vc_tta-panel-body">
-													<div class="vc_tta-panel-heading">
-														<h4 class="vc_tta-panel-title"><a
-																href="#1589227897394-da62ae1a-24e9" data-vc-accordion=""
-																data-vc-container=".vc_tta-container"><span
-																	class="vc_tta-title-text">PLAN
-																	RE-ENTRENAMIENTO</span></a></h4>
-													</div>
-													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>Plan REENTRENAMIENTO</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount">4, 6 y 8 CLASES
-																		PRACTICAS</span><span
-																		class="pricing-per"></span></div>
-															</div>
 
-															<table style="height: 253px;" width="100%">
-																<tbody>
-																	<tr>
-																		<td width="100%">
-																			<p style="text-align: center;"><strong>Nº
-																					CLASES</strong></p>
-																		</td>
-																		<td style="text-align: center;" width="100%">
-																			<strong>VALOR</strong></td>
-																		<td style="text-align: center;" width="100%">
-																			<p style="text-align: center;">
-																				<strong>CONTRATAR</strong></p>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="text-align: center;" width="100%">
-																			<strong>4 CLASES</strong></td>
-																		<td style="text-align: center;" width="100%">
-																			<strong>$55.000</strong></td>
-																		<td width="200">
-																			<form
-																				action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																				method="post" name="btnPago">
+												<!-- PLAN PREMIUM -->
+												<div class="vc_tta-panel vc_active" id="standar" data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[2]">
+													<div class="vc_tta-panel-body">
+														<div class="vc_tta-panel-heading">
+															<h4 class="vc_tta-panel-title">
+																<span class="vc_tta-title-text">
+																	PLAN PREMIUM
+																</span>
+															</h4>
+														</div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331;">
+																	<h3>
+																		PLAN PREMIUM
+																	</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount">
+																			$200.000
+																		</span>
+																	</div>
+																</div>
+
+																<ul>
+																	<li style="text-align: center;">
+																		<strong>
+																			20 Clases Prácticas (45 min)
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			8 Clases Teóricas usando Plataforma on-line
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			2 Sesiones Psicotécnico (30 min)
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Vehículo para rendir examen de conducir
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<a
+																			href="https://www.didaktikaconductores.cl/wp-content/uploads/2021/11/CONTRATO-PLAN-PREMIUM.pdf">
+																			IMPORTANTE: LEER CONTRATO DE PRESTACIÓN DE SERVICIO
+																		</a>
+																	</li>
+																</ul>
+																<div style="text-align: center;">
+																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- PLAN RE-ENTRENAMIENTO -->
+												<div class="vc_tta-panel vc_active" id="standar" data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[3]">
+													<div class="vc_tta-panel-body">
+														<div class="vc_tta-panel-heading">
+															<h4 class="vc_tta-panel-title">
+																<span class="vc_tta-title-text">
+																	PLAN RE-ENTRENAMIENTO
+																</span>
+															</h4>
+														</div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331;">
+																	<h3>
+																		PLAN RE-ENTRENAMIENTO
+																	</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount">
+																			4, 6 y 8 CLASES PRACTICAS
+																		</span>
+																	</div>
+																</div>
+
+																<table style="height: 253px;" width="100%">
+																	<tbody>
+																		<tr>
+																			<td>
 																				<p style="text-align: center;">
-																					<strong><input
-																							class="wpcf7-form-control wpcf7-submit"
-																							type="submit"
-																							value="COMPRA ONLINE"></strong>
+																					<strong>
+																						Nº CLASES
+																					</strong>
 																				</p>
-																				<p><strong><input name="buttonId"
-																							type="hidden"
-																							value="53b042ffce7568d22751905369057ec2"></strong>
-																				</p>
-																			</form>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="text-align: center;" width="100%">
-																			<strong>6 CLASES</strong></td>
-																		<td width="100%"><strong>$75.000</strong></td>
-																		<td width="200">
-																			<form
-																				action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																				method="post" name="btnPago">
+																			</td>
+																			<td style="text-align: center;">
 																				<p style="text-align: center;">
-																					<strong><input
-																							class="wpcf7-form-control wpcf7-submit"
-																							type="submit"
-																							value="COMPRA ONLINE"></strong>
+																					<strong>
+																						VALOR
+																					</strong>
 																				</p>
-																				<p><strong><input name="buttonId"
-																							type="hidden"
-																							value="8fbc60f956e2e8c03e23c160c323dcea"></strong>
-																				</p>
-																			</form>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td style="text-align: center;" width="100%">
-																			<strong>8 CLASES</strong></td>
-																		<td style="text-align: center;" width="100%">
-																			<strong>$90.000</strong></td>
-																		<td width="200">
-																			<form
-																				action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																				method="post" name="btnPago">
+																			</td>
+																			<td style="text-align: center;">
 																				<p style="text-align: center;">
-																					<strong><input
-																							class="wpcf7-form-control wpcf7-submit"
-																							type="submit"
-																							value="COMPRA ONLINE"></strong>
+																					<strong>
+																						CONTRATAR
+																					</strong>
 																				</p>
-																				<p><strong><input name="buttonId"
-																							type="hidden"
-																							value="e24d7ef7f04901cdce426133f783ba4c"></strong>
-																				</p>
-																			</form>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-															<p style="text-align: center;">Cada clase tiene una duración
-																de 45 minutos.</p>
-
-
+																			</td>
+																		</tr>
+																		<tr>
+																			<td style="text-align: center;">
+																				<strong>
+																					4 CLASES
+																				</strong>
+																			</td>
+																			<td style="text-align: center;">
+																				<strong>
+																					$55.000
+																				</strong>
+																			</td>
+																			<td>
+																				<div style="text-align: center;">
+																					<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td style="text-align: center;">
+																				<strong>
+																					6 CLASES
+																				</strong>
+																			</td>
+																			<td style="text-align: center;">
+																				<strong>
+																					$75.000
+																				</strong>
+																			</td>
+																			<td>
+																				<div style="text-align: center;">
+																					<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td style="text-align: center;">
+																				<strong>
+																					8 CLASES
+																				</strong>
+																			</td>
+																			<td style="text-align: center;">
+																				<strong>
+																					$90.000
+																				</strong>
+																			</td>
+																			<td>
+																				<div style="text-align: center;">
+																					<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																				</div>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<p style="text-align: center;">
+																	Cada clase tiene una duración de 45 minutos.
+																</p>
+															</div>
 														</div>
 													</div>
 												</div>
-												<div class="vc_tta-panel" id="1589227291312-d535da9f-a87e"
-													data-vc-content=".vc_tta-panel-body">
-													<div class="vc_tta-panel-heading">
-														<h4 class="vc_tta-panel-title"><a
-																href="#1589227291312-d535da9f-a87e" data-vc-accordion=""
-																data-vc-container=".vc_tta-container"><span
-																	class="vc_tta-title-text">PLAN TEORICO</span></a>
-														</h4>
-													</div>
+
+												<!-- PLAN TEÓRICO -->
+												<div class="vc_tta-panel vc_active" id="standar" data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[4]">
 													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>Plan CLASES TEORICAS ON-LINE</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount">$30.000</span><span
-																		class="pricing-per"></span></div>
+														<div class="vc_tta-panel-heading">
+															<h4 class="vc_tta-panel-title">
+																<span class="vc_tta-title-text">
+																	PLAN TEÓRICO
+																</span>
+															</h4>
+														</div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331;">
+																	<h3>
+																		PLAN CLASES TEÓRICAS ON-LINE
+																	</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount">
+																			$30.000
+																		</span>
+																	</div>
+																</div>
+																<ul>
+																	<li>
+																		<strong>
+																			8 Clases Teóricas usando Plataforma on-line
+																		</strong>
+																	</li>
+																	<li>
+																		<strong>
+																			Presentaciones, documentos, test, ensayos y exámenes
+																			de preparación.
+																		</strong>
+																	</li>
+																	<li>
+																		<strong>
+																			Horas de Tutorías para consultas on-line
+																		</strong>
+																	</li>
+																</ul>
+																<div style="text-align: center;">
+																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																</div>
 															</div>
-
-															<ul>
-																<li><strong>8 Clases Teóricas usando Plataforma
-																		on-line</strong></li>
-																<li><strong>Presentaciones, documentos, test, ensayos y
-																		exámenes de preparación.</strong></li>
-																<li><strong>Horas de Tutorías para consultas
-																		on-line</strong></li>
-															</ul>
-															<form
-																action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																method="post" name="btnPago">
-																<p style="text-align: center;"><strong><input
-																			class="wpcf7-form-control wpcf7-submit"
-																			type="submit"
-																			value="COMPRA ONLINE"></strong></p>
-																<p><input name="buttonId" type="hidden"
-																		value="7e47a12953f3f5890703082a77943c76"></p>
-															</form>
-
-
 														</div>
 													</div>
 												</div>
-												<div class="vc_tta-panel" id="1589227955440-f689d675-1f11"
-													data-vc-content=".vc_tta-panel-body">
-													<div class="vc_tta-panel-heading">
-														<h4 class="vc_tta-panel-title"><a
-																href="#1589227955440-f689d675-1f11" data-vc-accordion=""
-																data-vc-container=".vc_tta-container"><span
-																	class="vc_tta-title-text">SESIÓN
-																	PSICOSENSOMÉTRICO</span></a></h4>
-													</div>
+
+												<!-- SESIÓN PSICOSENSOMÉTRICO -->
+												<div class="vc_tta-panel vc_active" id="standar" data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[5]">
 													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>SESIÓN PSICOSENSOMÉTRICO</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount">$8.000</span><span
-																		class="pricing-per"></span></div>
+														<div class="vc_tta-panel-heading">
+															<h4 class="vc_tta-panel-title">
+																<span class="vc_tta-title-text">
+																SESIÓN PSICOSENSOMÉTRICO
+																</span>
+															</h4>
+														</div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331;">
+																	<h3>
+																		SESIÓN PSICOSENSOMÉTRICO
+																	</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount">
+																			$8.000
+																		</span>
+																	</div>
+																</div>
+																<ul>
+																	<li>
+																		<b>
+																			Sesión de 30 minutos con apoyo de instructor
+																		</b>
+																	</li>
+																</ul>
+																<div style="text-align: center;">
+																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																</div>
 															</div>
-
-															<ul>
-																<li><b>Sesión de 30 minutos con apoyo de instructor</b>
-																</li>
-															</ul>
-															<form
-																action="https://webpay3g.transbank.cl/filtroUnificado/buttonService"
-																method="post" name="btnPago"><input name="buttonId"
-																	type="hidden"
-																	value="1ac208fe18d79690876173ef307bb3a8">
-																<p></p>
-																<p style="text-align: center;"><strong><input
-																			class="wpcf7-form-control wpcf7-submit"
-																			type="submit"
-																			value="COMPRA ONLINE"></strong></p>
-															</form>
-
-
 														</div>
 													</div>
 												</div>
-												<div class="vc_tta-panel" id="1589231306400-59238b40-ad8b"
-													data-vc-content=".vc_tta-panel-body">
-													<div class="vc_tta-panel-heading">
-														<h4 class="vc_tta-panel-title"><a
-																href="#1589231306400-59238b40-ad8b" data-vc-accordion=""
-																data-vc-container=".vc_tta-container"><span
-																	class="vc_tta-title-text">PAGOS CON TRANSFERENCIA
-																	ELECTRÓNICA</span></a></h4>
-													</div>
+
+												<!-- PAGOS CON TRANSFERENCIA ELECTRÓNICA -->
+												<div class="vc_tta-panel vc_active" id="standar" data-vc-content=".vc_tta-panel-body" *ngIf="mostrarElementos[6]">
 													<div class="vc_tta-panel-body">
-														<div
-															class="pricing-plan pricing-color-true wpb_content_element">
-															<div class="pricing-plan-head"
-																style="background-color:#10a331;">
-																<h3>PAGOS VIA TRANSFERENCIA ELECTÓNICA</h3>
-																<div class="pricing-price"><span
-																		class="pricing-amount"></span><span
-																		class="pricing-per"></span></div>
+														<div class="vc_tta-panel-heading">
+															<h4 class="vc_tta-panel-title">
+																<span class="vc_tta-title-text">
+																	PAGOS CON TRANSFERENCIA ELECTRÓNICA
+																</span>
+															</h4>
+														</div>
+														<div>
+															<div class="pricing-plan pricing-color-true wpb_content_element">
+																<div class="pricing-plan-head"
+																	style="background-color:#10a331; ">
+																	<h3>
+																		PAGOS VIA TRANSFERENCIA ELECTÓNICA
+																	</h3>
+																	<div class="pricing-price">
+																		<span class="pricing-amount"></span>
+																		<span class="pricing-per"></span>
+																	</div>
+																</div>
+																<ul>
+																	<li style="text-align: center;">
+																		<strong>
+																			BANCO ESTADO
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Cuenta Vista/chequera electrónica
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Cuenta N° 52070235536
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Premium Inversiones SPA
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			RUT 77.021.428-9
+																		</strong>
+																	</li>
+																	<li style="text-align: center;">
+																		<strong>
+																			Enviar Comprobante a info@didaktikaconductores.cl
+																		</strong>
+																	</li>
+																</ul>
 															</div>
-
-															<ul>
-																<li style="text-align: center;"><strong>BANCO
-																		ESTADO</strong></li>
-																<li style="text-align: center;"><strong>Cuenta
-																		Vista/chequera electrónica</strong></li>
-																<li style="text-align: center;"><strong>Cuenta N°
-																		52070235536</strong></li>
-																<li style="text-align: center;"><strong>Premium
-																		Inversiones SPA&nbsp;</strong></li>
-																<li style="text-align: center;"><strong>RUT
-																		77.021.428-9</strong></li>
-																<li style="text-align: center;"><strong>Enviar
-																		Comprobante a
-																		info@didaktikaconductores.cl&nbsp;</strong></li>
-															</ul>
-
-
 														</div>
 													</div>
 												</div>
@@ -618,12 +694,12 @@
 						</div>
 					</div>
 				</div>
-		
+
 			</div> <!-- end content -->
 
 		</div> <!-- end page-wrap -->
 
-<app-footer></app-footer>
+		<app-footer></app-footer>
 	</div><!-- end wrapall / boxed -->
 
 	<link rel="stylesheet" id="vc_tta_style-css"
