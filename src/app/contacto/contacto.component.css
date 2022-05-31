@@ -6,10 +6,11 @@
 div#header_background{
     background-size: cover;
     width:auto;
-    height:400px;
+    height:500px;
     background-image: url(https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-vehiculos-fullequipados-resize.jpg);
     background-repeat:no-repeat;
     background-position: center;
+    padding-top: 100px;
 }
 
 .header_text{
