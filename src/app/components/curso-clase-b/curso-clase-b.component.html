@@ -31,7 +31,7 @@
 								<div class="vc_tta-container" data-vc-action="collapse">
 									<div
 										class="vc_general vc_tta vc_tta-tabs vc_tta-color-grey vc_tta-style-modern vc_tta-shape-rounded vc_tta-spacing-1 vc_tta-tabs-position-left vc_tta-controls-align-left ">
-										<div class="vc_tta-tabs-container">
+										<div class="vc_tta-tabs-container" style="width: 400px;">
 											<ul class="vc_tta-tabs-list">
 												<li class="vc_tta-tab vc_active" data-vc-tab=""
 													(click)="desplegarPlan(0)">
@@ -123,7 +123,7 @@
 																	</li>
 																</ul>
 																<div style="text-align: center;">
-																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																	<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																</div>
 															</div>
 														</div>
@@ -182,7 +182,7 @@
 																	</li>
 																</ul>
 																<div style="text-align: center;">
-																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																	<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																</div>
 															</div>
 														</div>
@@ -242,7 +242,7 @@
 																	</li>
 																</ul>
 																<div style="text-align: center;">
-																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																	<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																</div>
 															</div>
 														</div>
@@ -311,7 +311,7 @@
 																			</td>
 																			<td>
 																				<div style="text-align: center;">
-																					<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																					<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																				</div>
 																			</td>
 																		</tr>
@@ -328,7 +328,7 @@
 																			</td>
 																			<td>
 																				<div style="text-align: center;">
-																					<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																					<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																				</div>
 																			</td>
 																		</tr>
@@ -345,7 +345,7 @@
 																			</td>
 																			<td>
 																				<div style="text-align: center;">
-																					<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																					<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																				</div>
 																			</td>
 																		</tr>
@@ -401,7 +401,7 @@
 																	</li>
 																</ul>
 																<div style="text-align: center;">
-																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																	<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																</div>
 															</div>
 														</div>
@@ -439,7 +439,7 @@
 																	</li>
 																</ul>
 																<div style="text-align: center;">
-																	<a href="/formulario" target="_self" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
+																	<a href="/formulario" target="_self" id="botonesCO" class="button color-3 medium" style="border-radius: 2px;">COMPRA ONLINE</a>
 																</div>
 															</div>
 														</div>
@@ -528,7 +528,7 @@
 
 									</div>
 								</div>
-								<a href="#formulario" target="_self" class="button color-2 small "
+								<a href="#formulario" target="_self" id="botonesCA" class="button color-2 small "
 									style="border-radius: 2px;">Comienza Ahora</a>
 							</div>
 						</div>
@@ -574,7 +574,7 @@
 
 									</div>
 								</div>
-								<a href="#formulario" target="_self" class="button color-2 small "
+								<a href="#formulario" target="_self" id="botonesCA" class="button color-2 small "
 									style="border-radius: 2px;">Comienza Ahora</a>
 							</div>
 						</div>
@@ -595,7 +595,7 @@
 
 									</div>
 								</div>
-								<a href="#formulario" target="_self" class="button color-2 small "
+								<a href="#formulario" target="_self" id="botonesCA" class="button color-2 small "
 									style="border-radius: 2px;">Comienza Ahora</a>
 							</div>
 						</div>
@@ -641,7 +641,7 @@
 
 									</div>
 								</div>
-								<a href="#formulario" target="_self" class="button color-2 small "
+								<a href="#formulario" target="_self" id="botonesCA" class="button color-2 small "
 									style="border-radius: 2px;">Comienza Ahora</a>
 							</div>
 						</div>
@@ -684,9 +684,9 @@
 														class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
 														aria-required="true" aria-invalid="false"></span> </label>
 										</p>
-										<p><input type="submit" value="Quiero Que me Llamen"
+										<p><button type="submit" id="quiero"
 												class="wpcf7-form-control wpcf7-submit"><span
-												class="ajax-loader"></span></p>
+												class="ajax-loader"></span>Quiero Que me Llamen</button></p>
 										<div class="wpcf7-response-output wpcf7-display-none"></div>
 									</form>
 								</div>

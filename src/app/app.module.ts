@@ -23,6 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormPagoComponent } from './components/form-pago/form-pago.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
+import { AlumnoComponent } from './perfiles/alumno/alumno.component';
+import { InstructorComponent } from './perfiles/instructor/instructor.component';
+import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     FormPagoComponent,
     ContactoComponent,
-    FooterComponent
+    FooterComponent,
+    AlumnoComponent,
+    InstructorComponent,
+    RecepcionComponent
   ],
   imports: [
     BrowserModule,
