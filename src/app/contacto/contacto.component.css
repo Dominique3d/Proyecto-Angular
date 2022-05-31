@@ -6,50 +6,84 @@
 div#header_background{
     background-size: cover;
     width:auto;
-    height:300px;
+    height:400px;
     background-image: url(https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-vehiculos-fullequipados-resize.jpg);
+    background-repeat:no-repeat;
+    background-position: center;
 }
 
 .header_text{
-    margin: 0px 1100px 50px 90px; 
+    margin: 0px 1100px 50px 90px;
     padding: 20px;
     color: #ffffff;
-    font-size: 200%;
+    font-size: 300%;
     text-align: center;
-    line-height:50px;
+    line-height:80px;
     text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5pt;
 }    
 
 div#formulario_background{
-    margin:auto; 
+    background: url(https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-pago-recibido-clase-b.jpg) no-repeat center fixed;
+    margin:auto;
     background-size: cover;
     width:auto;
     height:900px;
-    background-image: url(https://www.didaktikaconductores.cl/wp-content/uploads/2018/05/didaktika-escuela-de-conductores-pago-recibido-clase-b.jpg);
+    overflow: hidden;
 }
 
 .head_form{
-    margin: 0px 90px 10px 500px;  
-    padding: 30px;
-    color: #ffffff; 
-    text-transform: uppercase; 
-    font-size: 200%; 
+    margin: 80px 90px 10px 500px;
+    padding: 0px;
+    color: #ffffff;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 300%;
+    font-weight: 700;
+    letter-spacing: 1.5pt;
 }
 
 .wpcf7{
-    margin: 0px 90px 50px 500px; 
+    margin: 20px 90px 50px 500px;
     color: #ffffff;
     text-align: left;
     float: left;
     line-height:50px;
     font-size: 100%;
+    font-weight: 600;
 }
 
 div#form_text{
-    margin: 0px 90px 50px 500px; 
+    margin: 0px 90px 50px 500px;
     color: #ffffff;
     text-align: left;
     float: right;
     line-height:50px;
     font-size: 100%;
+    font-weight: 600;
+    letter-spacing: 1.5pt;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 1px;
+    background-color: transparent;
+    border-color: #ffffff;
+    border: 2px solid;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 1px;
+    width: 90px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1px;
+    height: 55px;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #1b1f1b;
+    border: 2px;
 }
