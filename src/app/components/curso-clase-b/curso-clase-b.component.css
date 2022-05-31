@@ -168,17 +168,7 @@ body {
 		margin: 20px 0 0 !important;
 	}
 
-	.wpcf7 form.wpcf7-form p {
-		position: relative;
-		font-weight: 400;
-		margin: 0 0 0px !important;
-	}
-
-	#footer .widget ul li {
-		border-bottom: 0px solid #666666;
-		position: none;
-		padding: 10px 10px 10px 0;
-	}
+	
 
 	@media only screen and (max-width: 767px) {
 		#topbar {
@@ -273,122 +263,6 @@ body {
 		}
 	}
 
-	.fb_animate {
-		animation: fb_transform .3s forwards
-	}
-
-	.fb_dialog {
-		background: rgba(82, 82, 82, .7);
-		position: absolute;
-		top: -10000px;
-		z-index: 10001
-	}
-
-	.fb_dialog_advanced {
-		border-radius: 8px;
-		padding: 10px
-	}
-
-	.fb_dialog_content {
-		background: #fff;
-		color: #373737
-	}
-
-	.fb_dialog_close_icon {
-		background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
-		cursor: pointer;
-		display: block;
-		height: 15px;
-		position: absolute;
-		right: 18px;
-		top: 17px;
-		width: 15px
-	}
-
-	.fb_dialog_mobile .fb_dialog_close_icon {
-		left: 5px;
-		right: auto;
-		top: 5px
-	}
-
-	.fb_dialog_padding {
-		background-color: transparent;
-		position: absolute;
-		width: 1px;
-		z-index: -1
-	}
-
-	.fb_dialog_close_icon:hover {
-		background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
-	}
-
-	.fb_dialog_close_icon:active {
-		background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
-	}
-
-	.fb_dialog_iframe {
-		line-height: 0
-	}
-
-	.fb_dialog_content .dialog_title {
-		background: #6d84b4;
-		border: 1px solid #365899;
-		color: #fff;
-		font-size: 14px;
-		font-weight: bold;
-		margin: 0
-	}
-
-	.fb_dialog_content .dialog_title>span {
-		background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
-		float: left;
-		padding: 5px 0 7px 26px
-	}
-
-	body.fb_hidden {
-		height: 100%;
-		left: 0;
-		margin: 0;
-		overflow: visible;
-		position: absolute;
-		top: -10000px;
-		transform: none;
-		width: 100%
-	}
-
-	.fb_dialog.fb_dialog_mobile.loading {
-		background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
-		min-height: 100%;
-		min-width: 100%;
-		overflow: hidden;
-		position: absolute;
-		top: 0;
-		z-index: 10001
-	}
-
-	.fb_dialog.fb_dialog_mobile.loading.centered {
-		background: none;
-		height: auto;
-		min-height: initial;
-		min-width: initial;
-		width: auto
-	}
-
-	.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
-		width: 100%
-	}
-
-	.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
-		background: none
-	}
-
-	.loading.centered #fb_dialog_loader_close {
-		clear: both;
-		color: #fff;
-		display: block;
-		font-size: 18px;
-		padding-top: 20px
-	}
 
 	#fb-root #fb_dialog_ipad_overlay {
 		background: rgba(0, 0, 0, .4);
