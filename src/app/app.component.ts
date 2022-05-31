@@ -8,7 +8,7 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Proyecto-GPS';
+  title = 'Proyecto-Angular';
 
   constructor(private router: Router){
     router.events.forEach((event) => {
