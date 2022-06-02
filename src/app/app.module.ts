@@ -26,9 +26,12 @@ import { FooterComponent } from './footer/footer.component';
 import { AlumnoComponent } from './perfiles/alumno/alumno.component';
 import { InstructorComponent } from './perfiles/instructor/instructor.component';
 import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { FullCalendarModule } from 'primeng/fullcalendar';
+import { AgendaComponent } from './agenda/agenda.component';
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     FormularioComponent,
     NavbarComponent,
@@ -40,8 +43,10 @@ import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
     FooterComponent,
     AlumnoComponent,
     InstructorComponent,
-    RecepcionComponent
-  ],
+    RecepcionComponent,
+      CalendarComponent,
+      AgendaComponent
+   ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -53,7 +58,8 @@ import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
