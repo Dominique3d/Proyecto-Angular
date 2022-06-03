@@ -32,6 +32,8 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { VerDatosComponent } from './perfiles/recepcion/ver-datos/ver-datos.component';
 import { DatosEstudiantesComponent } from './perfiles/recepcion/ver-datos/datos-estudiantes/datos-estudiantes.component';
 import { DatosInstructoresComponent } from './perfiles/recepcion/ver-datos/datos-instructores/datos-instructores.component';
+import { SolicitudesComponent } from './perfiles/recepcion/solicitudes/solicitudes.component';
+import { PagosMatriculasComponent } from './perfiles/recepcion/pagos-matriculas/pagos-matriculas.component';
 
 @NgModule({
   declarations: [		
@@ -51,7 +53,9 @@ import { DatosInstructoresComponent } from './perfiles/recepcion/ver-datos/datos
       AgendaComponent,
       VerDatosComponent,
       DatosEstudiantesComponent,
-      DatosInstructoresComponent
+      DatosInstructoresComponent,
+      SolicitudesComponent,
+      PagosMatriculasComponent
    ],
   imports: [
     BrowserModule,
