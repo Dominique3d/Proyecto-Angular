@@ -10,6 +10,9 @@ import { AgendaComponent } from "./agenda/agenda.component";
 import { AlumnoComponent } from "./perfiles/alumno/alumno.component";
 import { InstructorComponent } from "./perfiles/instructor/instructor.component";
 import { RecepcionComponent } from "./perfiles/recepcion/recepcion.component";
+import { VerDatosComponent } from "./perfiles/recepcion/ver-datos/ver-datos.component";
+import { DatosEstudiantesComponent } from "./perfiles/recepcion/ver-datos/datos-estudiantes/datos-estudiantes.component";
+import { DatosInstructoresComponent } from "./perfiles/recepcion/ver-datos/datos-instructores/datos-instructores.component";
 
 
 const APP_ROUTES: Routes = [
@@ -27,7 +30,10 @@ const APP_ROUTES: Routes = [
     { path: 'alumno', component: AlumnoComponent},
     { path: 'instructor', component: InstructorComponent},
     { path: 'recepcion', component: RecepcionComponent},
-    
+    { path: 'ver-datos', component: VerDatosComponent},
+    { path: 'datos-estudiantes', component: DatosEstudiantesComponent},
+    { path: 'datos-instructores', component: DatosInstructoresComponent},
+
     { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

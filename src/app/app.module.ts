@@ -29,6 +29,9 @@ import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FullCalendarModule } from 'primeng/fullcalendar';
 import { AgendaComponent } from './agenda/agenda.component';
+import { VerDatosComponent } from './perfiles/recepcion/ver-datos/ver-datos.component';
+import { DatosEstudiantesComponent } from './perfiles/recepcion/ver-datos/datos-estudiantes/datos-estudiantes.component';
+import { DatosInstructoresComponent } from './perfiles/recepcion/ver-datos/datos-instructores/datos-instructores.component';
 
 @NgModule({
   declarations: [		
@@ -45,7 +48,10 @@ import { AgendaComponent } from './agenda/agenda.component';
     InstructorComponent,
     RecepcionComponent,
       CalendarComponent,
-      AgendaComponent
+      AgendaComponent,
+      VerDatosComponent,
+      DatosEstudiantesComponent,
+      DatosInstructoresComponent
    ],
   imports: [
     BrowserModule,
