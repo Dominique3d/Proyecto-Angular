@@ -34,6 +34,8 @@ import { DatosEstudiantesComponent } from './perfiles/recepcion/ver-datos/datos-
 import { DatosInstructoresComponent } from './perfiles/recepcion/ver-datos/datos-instructores/datos-instructores.component';
 import { SolicitudesComponent } from './perfiles/recepcion/solicitudes/solicitudes.component';
 import { PagosMatriculasComponent } from './perfiles/recepcion/pagos-matriculas/pagos-matriculas.component';
+import { PerfilAlumnoComponent } from './perfiles/alumno/perfil-alumno/perfil-alumno.component';
+import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instructor/perfil-instructor.component';
 
 @NgModule({
   declarations: [		
@@ -55,7 +57,9 @@ import { PagosMatriculasComponent } from './perfiles/recepcion/pagos-matriculas/
       DatosEstudiantesComponent,
       DatosInstructoresComponent,
       SolicitudesComponent,
-      PagosMatriculasComponent
+      PagosMatriculasComponent,
+      PerfilAlumnoComponent,
+      PerfilInstructorComponent
    ],
   imports: [
     BrowserModule,

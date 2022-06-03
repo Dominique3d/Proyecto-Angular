@@ -1,3 +1,9 @@
+td, th {
+  text-align: center;
+}
+td {
+  font-weight: 500;
+}
 .fondo{
   background: url(\src\assets\instructor-fondo.png) no-repeat center fixed;
   background-size: cover;
@@ -22,7 +28,7 @@ height: 50px;
 width: 100%;
  background-color: #10a331;
 }
-.miCuenta {
+.Estudiantes {
   padding: 20px;
   text-align: left;
   line-height:50px;
@@ -35,7 +41,7 @@ width: 100%;
 .recordatorio {
   letter-spacing: 1.5pt;
   font-weight: 700;
-  height: 200px;
+  height: 400px;
   background-color: white;
   box-shadow: 1px 3px 3px 1px rgba(0,0,0,0.3);
   font-size: 130%;
@@ -63,4 +69,9 @@ width: 100%;
    margin-left: 10px;
    padding-left: 40px;
    padding-right: 40px;
+}
+.verPerfil {
+  color: white;
+  border-radius: 5px;
+  background-color: #176496;
 }
