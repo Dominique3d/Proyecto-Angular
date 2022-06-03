@@ -15,6 +15,7 @@ import { DatosEstudiantesComponent } from "./perfiles/recepcion/ver-datos/datos-
 import { DatosInstructoresComponent } from "./perfiles/recepcion/ver-datos/datos-instructores/datos-instructores.component";
 import { PerfilAlumnoComponent } from "./perfiles/alumno/perfil-alumno/perfil-alumno.component";
 import { PerfilInstructorComponent } from "./perfiles/instructor/perfil-instructor/perfil-instructor.component";
+import { SolicitudesComponent } from "./perfiles/recepcion/solicitudes/solicitudes.component";
 
 
 const APP_ROUTES: Routes = [
@@ -33,6 +34,7 @@ const APP_ROUTES: Routes = [
     { path: 'instructor', component: InstructorComponent},
     { path: 'recepcion', component: RecepcionComponent},
     { path: 'ver-datos', component: VerDatosComponent},
+    { path: 'solicitudes', component: SolicitudesComponent},
     { path: 'datos-estudiantes', component: DatosEstudiantesComponent},
     { path: 'datos-instructores', component: DatosInstructoresComponent},
     { path: 'perfil-instructor' , component: PerfilInstructorComponent},
