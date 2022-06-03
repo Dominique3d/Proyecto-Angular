@@ -1,0 +1,47 @@
+.fondo{
+  background: url(\src\assets\instructor-fondo.png) no-repeat center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 937px;
+}
+
+.container {
+
+  border: solid 10px;
+  border-color: white;
+
+}
+.big-container {
+  padding-top: 200px;
+
+}
+
+.bannerVerde {
+height: 50px;
+width: 100%;
+ background-color: #10a331;
+}
+.miCuenta {
+
+  background-color: #0f962d;
+}
+
+.recordatorio {
+height: 200px;
+background-color: white;
+}
+
+.botones {
+  border-radius: 20px;
+  background-color: white;
+margin-right: 20px;
+}
+.boton-datos {
+  font-size: x-large;
+  background-color: #0f962d;
+   color: white;
+   border-radius: 25px;
+   margin-right: 28px;
+   padding-left: 40px;
+   padding-right: 40px;
+}
