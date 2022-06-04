@@ -36,6 +36,7 @@ import { SolicitudesComponent } from './perfiles/recepcion/solicitudes/solicitud
 import { PagosMatriculasComponent } from './perfiles/recepcion/pagos-matriculas/pagos-matriculas.component';
 import { PerfilAlumnoComponent } from './perfiles/alumno/perfil-alumno/perfil-alumno.component';
 import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instructor/perfil-instructor.component';
+import { MatriculasComponent } from './matriculas/matriculas.component';
 
 @NgModule({
   declarations: [		
@@ -59,7 +60,8 @@ import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instruct
       SolicitudesComponent,
       PagosMatriculasComponent,
       PerfilAlumnoComponent,
-      PerfilInstructorComponent
+      PerfilInstructorComponent,
+      MatriculasComponent
    ],
   imports: [
     BrowserModule,

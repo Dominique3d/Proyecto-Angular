@@ -1,0 +1,54 @@
+td,
+th {
+    text-align: center;
+}
+
+td {
+    font-weight: 400 !important;
+}
+
+.fondo {
+    background: url("/src/assets/fondo-matriculas-1.png") no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+}
+
+.container {
+    border-radius: 5px;
+    border: solid 20px;
+    border-color: rgba(255, 255, 255, .5);
+
+
+}
+
+.big-container {
+    padding-top: 100px;
+
+}
+
+.bannerVerde {
+    height: 40px;
+    width: 100%;
+    background-color: #10a331;
+}
+
+.Matriculas {
+    padding: 20px;
+    text-align: left;
+    line-height: 50px;
+    font-size: 200%;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #0f962d;
+}
+
+.recordatorio {
+    letter-spacing: 1.5pt;
+    font-weight: 700;
+    height: 400px;
+    background-color: white;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.3);
+    font-size: 130%;
+    line-height: 25px;
+}
