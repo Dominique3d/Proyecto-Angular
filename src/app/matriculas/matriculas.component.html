@@ -1,0 +1,62 @@
+<div class="fondo">
+    <div class="big-container">
+      <div class="container" style="padding-left: 0; padding-right: 0">
+        <div class="bannerVerde"></div>
+        <div class="Matriculas">Matrículas</div>
+        <div
+          class="row"
+          style="
+            background-color: #eff0ef;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-right: 40px;
+            margin: auto;
+          "
+        >
+          <div class="recordatorio" style="border-radius: 3px; margin-left: 18px;">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Estudiante</th>
+                    <th scope="col">Plan</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Formulario</th>
+                    <th scope="col">Comprobante de pago</th>
+                    <th scope="col">Generar informe</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let matricula of listaDeMatriculas">
+                  <tr>
+                    <td>{{matricula.estudiante}}</td>
+                    <td>{{matricula.plan}}</td>
+                    <td>{{matricula.fecha}}</td>
+                    <td>
+                        <button class="btn btn-light">
+                            {{matricula.formulario}}
+                            <i class="fa-solid fa-file-lines fa-2x"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-light">
+                            {{matricula.comprobante}}
+                            <i class="fa-solid fa-receipt fa-2x"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-light">
+                            {{matricula.informe}}
+                            <i class="fa-solid fa-file-pdf fa-2x"></i>
+                        </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button class="btn btn-primary" onclick="javascript:history.back()">Atrás</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
