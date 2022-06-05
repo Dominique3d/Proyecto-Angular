@@ -5,6 +5,10 @@
   height: 970px;
 }
 
+ a {
+  color: black;
+  text-decoration: none;
+}
 .container {
   border-radius: 7px;
   border: solid 20px;
