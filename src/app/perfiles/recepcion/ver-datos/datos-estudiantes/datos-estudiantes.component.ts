@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datos-estudiantes.component.css']
 })
 export class DatosEstudiantesComponent implements OnInit {
+  estudiantes: any[]=[];
 
   constructor() { }
 
