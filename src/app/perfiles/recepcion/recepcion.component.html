@@ -7,7 +7,7 @@
         Mi cuenta
       </div>
       <div class="row"
-        style="background-color: #eff0ef; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; margin: auto;  ">
+        style="background-color: #eff0ef; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; margin: auto;">
         <div class="col-4" style="margin-left: auto; margin-right: auto;">
           <img
             src="..\assets\icon.png"
@@ -16,8 +16,8 @@
         </div>
         <div class="col-8" style="padding: 0%;">
           <div class="botonesMicuenta" style="padding-bottom: 20px; padding-left: 3%;">
-            <button class="btn botones">
-              <a href="/ver-datos">Ver Datos</a>
+            <button class="btn botones" (click)="cambiarPestanaActual(0)">
+              <a >Ver Datos</a>
             </button>
             <button class="btn botones">
               <a href="/agenda">Ver Agenda</a>
@@ -25,17 +25,45 @@
             <button class="btn botones">
               <a href="/matriculas">Pagos y Matrículas</a>
             </button>
-            <button class="btn botones">
-              <a href="/solicitudes">Solicitudes</a>
+            <button class="btn botones" (click)="cambiarPestanaActual(1)">
+              <a >Solicitudes</a>
             </button>
           </div>
 
-          <div class="recordatorio" style="padding: 40px; border-radius: 20px;">
-            <!-- <h2 class="header-recordatorio" style="font-size: 130%;  font-weight: 700; letter-spacing: 1.5pt;">
-              Recordatorio: </h2>
+          <div class="recordatorio" style="padding: 40px; border-radius: 20px; height: fit-content;">
+            <!-- VER DATOS -->
+            <div *ngIf="pestanaActual[0]">
+              <button type="button" class="btn boton-datos" >
+                <a href="/datos-estudiantes" style="color: white;">Ver Datos de Estudiantes</a>
+              </button>
+              <button type="button" class="btn boton-datos">
+                <a href="/datos-instructores" style="color: white;">Ver Datos de Instructores</a>
+              </button>
+            </div>
 
-            Revisar solicitudes pendientes de reagendización de clases y de cancelación de clases.
-          </div> -->
+            <!-- SOLICITUDES -->
+            <div *ngIf="pestanaActual[1] && solicitudes.length">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col" style="font-weight: 700;">Asunto</th>
+                    <th scope="col" style="font-weight: 700;">Usuario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let solicitud of solicitudes">
+                    <td scope="row" class="txt-solicitudes" >{{solicitud.asunto}}</td>
+                    <td class="txt-solicitudes">{{solicitud.usuario}}</td>
+                    <button class="btn btn-aceptar"> Aceptar </button>
+                    <button class="btn btn-rechazar"> Rechazar </button>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div *ngIf="pestanaActual[1] && (solicitudes.length==0 || solicitudes.length==null)">
+              <p>No existen solicitudes</p>
+            </div>
         </div>
       </div>
     </div>
