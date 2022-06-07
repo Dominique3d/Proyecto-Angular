@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datos-instructores.component.css']
 })
 export class DatosInstructoresComponent implements OnInit {
+  instructores: any[] = []
 
   constructor() { }
 

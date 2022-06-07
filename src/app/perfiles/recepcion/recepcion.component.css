@@ -1,8 +1,8 @@
 .fondo{
-  background: url(\src\assets\instructor-fondo.png) no-repeat center fixed;
+  background: url(\src\assets\instructor-fondo.png) no-repeat center center fixed;
   background-size: cover;
   width:auto;
-  height: 970px;
+  height: 100vh;
 }
 
  a {
@@ -13,11 +13,9 @@
   border-radius: 7px;
   border: solid 20px;
   border-color: rgba(255, 255, 255, .5);
-
 }
 .big-container {
-  padding-top: 200px;
-
+  padding-top: 120px;
 }
 
 .bannerVerde {
@@ -76,6 +74,10 @@ width: 100%;
    margin-left: 10px;
    padding-left: 40px;
    padding-right: 40px;
+}
+
+.contenedorBotones{
+  margin-top: 15%;
 }
 
 .btn-aceptar {

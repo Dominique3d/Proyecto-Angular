@@ -20,7 +20,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormPagoComponent } from './components/form-pago/form-pago.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { AlumnoComponent } from './perfiles/alumno/alumno.component';
@@ -28,17 +27,14 @@ import { InstructorComponent } from './perfiles/instructor/instructor.component'
 import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FullCalendarModule } from 'primeng/fullcalendar';
-import { AgendaComponent } from './agenda/agenda.component';
-import { VerDatosComponent } from './perfiles/recepcion/ver-datos/ver-datos.component';
-import { DatosEstudiantesComponent } from './perfiles/recepcion/ver-datos/datos-estudiantes/datos-estudiantes.component';
-import { DatosInstructoresComponent } from './perfiles/recepcion/ver-datos/datos-instructores/datos-instructores.component';
+import { DatosEstudiantesComponent } from './perfiles/recepcion/datos-estudiantes/datos-estudiantes.component';
+import { DatosInstructoresComponent } from './perfiles/recepcion/datos-instructores/datos-instructores.component';
 import { SolicitudesComponent } from './perfiles/recepcion/solicitudes/solicitudes.component';
 import { PagosMatriculasComponent } from './perfiles/recepcion/pagos-matriculas/pagos-matriculas.component';
 import { PerfilAlumnoComponent } from './perfiles/alumno/perfil-alumno/perfil-alumno.component';
 import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instructor/perfil-instructor.component';
 import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
-import { MisReservasComponent } from './perfiles/alumno/mis-reservas/mis-reservas.component';
 
 @NgModule({
   declarations: [		
@@ -48,15 +44,12 @@ import { MisReservasComponent } from './perfiles/alumno/mis-reservas/mis-reserva
     HomeComponent,
     CursoClaseBComponent,
     LoginComponent,
-    FormPagoComponent,
     ContactoComponent,
     FooterComponent,
     AlumnoComponent,
     InstructorComponent,
     RecepcionComponent,
       CalendarComponent,
-      AgendaComponent,
-      VerDatosComponent,
       DatosEstudiantesComponent,
       DatosInstructoresComponent,
       SolicitudesComponent,
@@ -64,8 +57,7 @@ import { MisReservasComponent } from './perfiles/alumno/mis-reservas/mis-reserva
       PerfilAlumnoComponent,
       PerfilInstructorComponent,
       MatriculasComponent,
-      MisCursosComponent,
-      MisReservasComponent
+      MisCursosComponent
    ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div class="fondo">
   <div class="big-container">
-    <div class="container" style="padding-left: 0; padding-right:0;">
+    <div class="container" style="padding-left: 0; padding-right:0">
       <div class="bannerVerde">
       </div>
       <div class="miCuenta">
@@ -16,29 +16,17 @@
         </div>
         <div class="col-8" style="padding: 0%;">
           <div class="botonesMicuenta" style="padding-bottom: 20px; padding-left: 3%;">
-            <button class="btn botones" (click)="cambiarPestanaActual(0)">
-              <a >Ver Datos</a>
-            </button>
-            <button class="btn botones">
-              <a href="/agenda">Ver Agenda</a>
-            </button>
-            <button class="btn botones">
-              <a href="/matriculas">Pagos y Matrículas</a>
-            </button>
-            <button class="btn botones" (click)="cambiarPestanaActual(1)">
-              <a >Solicitudes</a>
-            </button>
+            <button class="btn botones" (click)="cambiarPestanaActual(0)">Ver datos</button>
+            <button class="btn botones" onclick="location.href='/calendario'" type="button">Ver Agenda</button>
+            <button class="btn botones" onclick="location.href='/matriculas'" type="button">Pagos y Matrículas</button>
+            <button class="btn botones" (click)="cambiarPestanaActual(1)">Solicitudes</button>
           </div>
 
-          <div class="recordatorio" style="padding: 40px; border-radius: 20px; height: fit-content;">
+          <div class="recordatorio" style="padding: 40px; border-radius: 20px; height: 40vh;">
             <!-- VER DATOS -->
-            <div *ngIf="pestanaActual[0]">
-              <button type="button" class="btn boton-datos" >
-                <a href="/datos-estudiantes" style="color: white;">Ver Datos de Estudiantes</a>
-              </button>
-              <button type="button" class="btn boton-datos">
-                <a href="/datos-instructores" style="color: white;">Ver Datos de Instructores</a>
-              </button>
+            <div *ngIf="pestanaActual[0]" class="contenedorBotones">
+              <button type="button" class="btn boton-datos" onclick="location.href='/datos-estudiantes'">Ver Datos de Estudiantes</button>
+              <button type="button" class="btn boton-datos" onclick="location.href='/datos-instructores'">Ver Datos de Instructores</button>
             </div>
 
             <!-- SOLICITUDES -->
