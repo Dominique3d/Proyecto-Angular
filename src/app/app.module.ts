@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 //Rutas
 import { APP_ROUTING } from './app.routes';
@@ -36,8 +37,12 @@ import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instruct
 import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
 
+const routes: Routes = [
+  {path: '', component: AppComponent},
+];
+
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
     FormularioComponent,
     NavbarComponent,
