@@ -25,39 +25,11 @@
                   <th scope="col">Horario</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngFor="let instructor of instructores">
                 <tr>
-                  <td scope="row"> </td>
-                  <td></td>
-                  <td></td>
-                  <td><button class="verPerfil"> Ver Perfil </button> </td>
-                  <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
-                </tr>
-                <tr>
-                  <td scope="row"></td>
-                  <td></td>
-                  <td></td>
-                  <td><button class="verPerfil"> Ver Perfil </button> </td>
-                  <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
-                </tr>
-                <tr>
-                  <td scope="row"></td>
-                  <td></td>
-                  <td></td>
-                  <td><button class="verPerfil"> Ver Perfil </button> </td>
-                  <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
-                </tr>
-                <tr>
-                  <td scope="row"></td>
-                  <td></td>
-                  <td></td>
-                  <td><button class="verPerfil"> Ver Perfil </button> </td>
-                  <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
-                </tr>
-                <tr>
-                  <td scope="row"></td>
-                  <td></td>
-                  <td></td>
+                  <td scope="row">{{instructor.nombre}}</td>
+                  <td>{{instructor.email}}</td>
+                  <td>{{instructor.telefono}}</td>
                   <td><button class="verPerfil"> Ver Perfil </button> </td>
                   <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
                 </tr>

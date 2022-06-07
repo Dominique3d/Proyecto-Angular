@@ -1,8 +1,8 @@
 .fondo{
-  background: url(\src\assets\instructor-fondo.png) no-repeat center fixed;
+  background: url(\src\assets\instructor-fondo.png) no-repeat center center fixed;
   background-size: cover;
   width:auto;
-  height: 970px;
+  height: 100vh;
 }
 
  a {
@@ -16,7 +16,7 @@
 
 }
 .big-container {
-  padding-top: 200px;
+  padding-top: 120px;
 
 }
 

@@ -5,10 +5,10 @@ td {
   font-weight: 500;
 }
 .fondo{
-  background: url(\src\assets\instructor-fondo.png) no-repeat center fixed;
+  background: url(\src\assets\instructor-fondo.png) no-repeat center center fixed;
   background-size: cover;
-  width: 100%;
-  height: 937px;
+  width:auto;
+  height: 100vh;
 }
 
 .container {
