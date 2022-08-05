@@ -1,55 +1,35 @@
-//Requires
-var express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser"); /* deprecated */
+const cors = require("cors");
 
-//Inicialización de variables
-var app = express();
+const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
 
-//Conexión con base de datos
-const mc = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'didaktika'
-});
-mc.connect();
+app.use(cors(corsOptions));
 
-//Rutas
-//Crear nuevo usuario
-app.post('/createUser', function (req, res) {
-    let datosUsuario = {
-        nombres: req.body.name,
-        apellidos: req.body.lName,
-        rut: req.body.rut,
-        direccion: req.body.address,
-        telefono: req.body.moNum,
-        correo: req.body.mail,
-        password: req.body.pass
-    };
-    if (mc) {
-        mc.query("INSERT INTO usuarios SET ?", datosUsuario, function (error, result) {
-            if(error) {
-                res.status(500).json({ "Mensaje": "Error"});
-            }
-            else{
-                res.status(201).json({"Mensaje": "Insertado"});
-            }
-        });
-    }
+app.use(express.json()); 
+
+app.use(express.urlencoded({ extended: true })); 
+
+const db = require("./src/models");
+
+db.sequelize.sync();
+
+// rutas
+app.get("/", (req, res) => {
+  res.json({ message: "Base de datos Funcionando!!!" });
 });
 
-app.get('/', (req, res, next) => {
-    res.status(200).json({
-        ok: true,
-        mensaje: 'Petición realizada correctamente'
-    });
-});
+require("./src/routes/clase-ruta")(app);
+require("./src/routes/estudiante-ruta")(app);
+require("./src/routes/instructor-ruta")(app);
+require("./src/routes/plan-ruta")(app);
 
-//Escuchar peticiones
-app.listen(3000, ()=>{
-    console.log('Express Server - puerto 3000 online');
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
