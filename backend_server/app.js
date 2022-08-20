@@ -1,35 +1,37 @@
 const express = require("express");
-const bodyParser = require("body-parser"); /* deprecated */
-const cors = require("cors");
-
 const app = express();
+const sequelize = require('./src/models/index');
+require('./src/models/relaciones');
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
 
-app.use(cors(corsOptions));
-
+// Middleware
+// Para poder rellenar el req.body
 app.use(express.json()); 
-
-app.use(express.urlencoded({ extended: true })); 
+app.use(express.urlencoded({ extended: false })); 
 
 const db = require("./src/models");
-
-db.sequelize.sync();
 
 // rutas
 app.get("/", (req, res) => {
   res.json({ message: "Base de datos Funcionando!!!" });
 });
 
-require("./src/routes/clase-ruta")(app);
-require("./src/routes/estudiante-ruta")(app);
-require("./src/routes/instructor-ruta")(app);
-require("./src/routes/plan-ruta")(app);
+app.use('/api/clases', require('./src/controllers/clase-controlador'));
+app.use('/api/personas', require('./src/controllers/persona-controlador'));
+app.use('/api/planes', require('./src/controllers/plan-controlador'));
 
-// set port, listen for requests
-const PORT = process.env.PORT || 8080;
+// Arrancamos el servidor
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+
+  // Conectase a la base de datos
+  // Force true: DROP TABLES
+  sequelize.sync({ force: false }).then(() => {
+    console.log("Nos hemos conectado a la base de datos");
+  }).catch(error => {
+    console.log('Se ha producido un error', error);
+  })
+
 });
