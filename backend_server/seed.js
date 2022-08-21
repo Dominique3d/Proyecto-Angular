@@ -12,6 +12,24 @@ const personas = [
     { rut:197970719, nombres: "Claudio", primerApellido: "Macher", segundoApellido: "Parada", email: "claudio@gmail.com", contrasena: 1234567, telefono: 952168273, role: 1 },
 ];
 
+const planes = [
+    { precio: 150000, nombre: "PLAN ESTANDAR", n_clases_practicas: 12, n_clases_teoricas: 8 },
+    { precio: 180000, nombre: "PLAN FULL", n_clases_practicas: 16, n_clases_teoricas: 8 },
+    { precio: 200000, nombre: "PLAN PREMIUM", n_clases_practicas: 20, n_clases_teoricas: 8 },
+    { precio: 55000, nombre: "PLAN RE-ENTRENAMIENTO", n_clases_practicas: 12, n_clases_teoricas: 4 },
+    { precio: 30000, nombre: "PLAN TEORICO", n_clases_practicas: 0, n_clases_teoricas: 4 },
+    { precio: 8000, nombre: "SESIÓN PSICOSENSOMÉTRICO", n_clases_practicas: 1, n_clases_teoricas: 0 },
+];
+
+const clases = [
+    { tipo: "Practico", fecha_hora:  Date.now() , plan_id: 1},
+    { tipo: "Practico", fecha_hora:  Date.now(), plan_id: 1},
+    { tipo: "Teorico", fecha_hora:  Date.now(), plan_id: 1},
+    { tipo: "Teorico", fecha_hora:  Date.now(), plan_id: 2},
+    { tipo: "Practico", fecha_hora:  Date.now(), plan_id: 2},
+    { tipo: "Practico", fecha_hora:  Date.now(), plan_id: 3},
+];
+
 sequelize.sync({ force: false }).then(() => {
     // Conexión establecida
     console.log("Conexión establecida...");
@@ -19,5 +37,8 @@ sequelize.sync({ force: false }).then(() => {
     // Rellenar usuarios
     personas.forEach(persona => Persona.create(persona));
 
+    planes.forEach(plan => Plan.create(plan));
+
+    clases.forEach(clase => Clase.create(clase));
 });
 
