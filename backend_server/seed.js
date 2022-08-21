@@ -6,10 +6,10 @@ require('./src/models/relaciones');
 
 // Personas
 const personas = [
-    { rut:197970715, nombres: "Anton", apellidos: "Munoz", email: "juan@agmail.com", contraseña: 1234, telefono: 952163664, role: 0 },
-    { rut:197970716, nombres: "Pablo", apellidos: "Sanmartin", email: "pablo@gmail.com", contraseña: 12345, telefono: 952166789, role: 0 },
-    { rut:197970718, nombres: "Dominique", apellidos: "DelValle", email: "dominique@gmail.com", contraseña: 123456, telefono: 952166352, role: 1 },
-    { rut:197970719, nombres: "Claudio", apellidos: "Macher", email: "claudio@gmail.com", contraseña: 1234567, telefono: 952168273, role: 1 },
+    { rut:197970715, nombres: "Anton", primerApellido: "Munoz", segundoApellido: "Parada", email: "juan@agmail.com", contrasena: 1234, telefono: 952163664, role: 0 },
+    { rut:197970716, nombres: "Pablo", primerApellido: "Sanmartin", segundoApellido: "Parada", email: "pablo@gmail.com", contrasena: 12345, telefono: 952166789, role: 0 },
+    { rut:197970718, nombres: "Dominique", primerApellido: "DelValle", segundoApellido: "Parada", email: "dominique@gmail.com", contrasena: 123456, telefono: 952166352, role: 1 },
+    { rut:197970719, nombres: "Claudio", primerApellido: "Macher", segundoApellido: "Parada", email: "claudio@gmail.com", contrasena: 1234567, telefono: 952168273, role: 1 },
 ];
 
 sequelize.sync({ force: false }).then(() => {

@@ -4,18 +4,21 @@ const sequelize = require('./index');
 class Persona extends Model {}
 Persona.init({
       rut: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       nombres: {
         type: DataTypes.STRING
       },
-      apellidos: {
+      primerApellido: {
+        type: DataTypes.STRING
+      },
+      segundoApellido: {
         type: DataTypes.STRING
       },
       email: {
         type: DataTypes.STRING
       },
-      contraseña: {
+      contrasena: {
         type: DataTypes.INTEGER
       },
       telefono: {

@@ -26,9 +26,10 @@ router.post('/', (req, res) => {
     Persona.create({
         rut: req.body.rut,
         nombres: req.body.nombres,
-        apellidos: req.body.apellidos,
+        primerApellido: req.body.primerApellido,
+        segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contraseña: req.body.contraseña,
+        contrasena: req.body.contraseña,
         telefono: req.body.telefono,
         role: req.body.role
     }).then(persona => {
