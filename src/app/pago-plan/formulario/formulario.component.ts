@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -6,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  constructor() { }
+  constructor(
+    private readonly fb: FormBuilder
+  ) { }
+
   ngOnInit(){
+  }
+
+  //*  Reactive Forms  */
+  newFormularioPago!: FormGroup;
+
+  initNewFormularioPagoForm(): FormGroup {
+    return (this.newFormularioPago = this.fb.group({
+      
+    }))
   }
 }

@@ -1,22 +1,23 @@
-module.exports = (sequelize, Sequelize) => {
-    const Plan = sequelize.define("plan", {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-      },
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('./index');
+
+class Plan extends Model {}
+Plan.init({
       precio: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       nombre: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
       },
       n_clases_practicas: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       n_clases_teoricas: {
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       }
+    }, {
+      sequelize,
+      modelName: "plan",
+      timestamps: false
     });
-  
-    return Plan;
-  };
+    module.exports = Plan;

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EstudianteService } from 'src/app/services/estudiante.service';
+import { Estudiante } from 'src/app/interfaces/estudiante.interface';
+import { ModalEditarEstudianteService } from 'src/app/services/modal-editar-estudiante.service';
 
 @Component({
   selector: 'app-datos-estudiantes',
@@ -8,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 export class DatosEstudiantesComponent implements OnInit {
   estudiantes: any[]=[];
 
-  constructor() { }
+  constructor(
+    public modalEditarEstudianteService: ModalEditarEstudianteService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  abrirModal(){
+    this.modalEditarEstudianteService.mostrarModal();
+  }
 }
