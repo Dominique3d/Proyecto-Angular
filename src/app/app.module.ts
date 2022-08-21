@@ -65,6 +65,7 @@ const routes: Routes = [
       MisCursosComponent
    ],
   imports: [
+
     BrowserModule,
     FormsModule,
     APP_ROUTING,
@@ -76,7 +77,8 @@ const routes: Routes = [
     MatFormFieldModule,
     MatIconModule,
     BrowserAnimationsModule,
-    FullCalendarModule
+    FullCalendarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
