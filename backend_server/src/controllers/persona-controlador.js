@@ -39,6 +39,44 @@ router.post('/', (req, res) => {
     })
 });
 
+// mostrar todos los estudiantes
+router.get('/getAllEstudiantes', (req, res) => {
+    Persona.findAll({
+        include: [{
+            model: Clase,
+            as: "clases",
+            attributes: ['tipo']
+        }, {
+            model: Plan,
+            as: "plans",
+            attributes: ['nombre'],
+        }],
+        attributes: ['nombres', 'primerApellido', 'segundoApellido'],
+            where: {
+            role: 0
+        }
+    }).then(personas => res.json(personas));
+});
+
+// mostrar todos los instructores
+router.get('/getAllInstructores', (req, res) => {
+    Persona.findAll({
+        include: [{
+            model: Clase,
+            as: "clases",
+            attributes: ['tipo']
+        }, {
+            model: Plan,
+            as: "plans",
+            attributes: ['nombre'],
+        }],
+        attributes: ['nombres', 'primerApellido', 'segundoApellido'],
+            where: {
+            role: 1
+        }
+    }).then(personas => res.json(personas));
+});
+
 // UPDATE /api/personas
 router.post('/update/:id', (req, res) => {
     Persona.update({
@@ -58,6 +96,5 @@ router.post('/update/:id', (req, res) => {
         res.json(result);
     });
 });
-
 
 module.exports = router;

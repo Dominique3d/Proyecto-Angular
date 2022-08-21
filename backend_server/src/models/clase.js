@@ -6,13 +6,9 @@ Clase.init({
       tipo: {
         type: DataTypes.STRING
       },
-      hora: {
-        type: DataTypes.STRING
-      },
-      fecha: {
-        type: DataTypes.STRING
+      fecha_hora: {
+        type: DataTypes.DATE
       }
-      
     }, {
       sequelize,
       modelName: "clase",
