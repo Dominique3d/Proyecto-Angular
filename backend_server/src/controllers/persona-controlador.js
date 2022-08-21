@@ -14,10 +14,10 @@ router.get('/getAllPersonas', (req, res) => {
             attributes: ['tipo']
         }, {
             model: Plan,
-            as: "planes",
+            as: "plans",
             attributes: ['nombre'],
         }],
-        attributes: ['nombres', 'apellidos']
+        attributes: ['nombres', 'primerApellido', 'segundoApellido']
     }).then(personas => res.json(personas));
 });
 
@@ -37,6 +37,26 @@ router.post('/', (req, res) => {
     }).catch(err => {
         res.json(err);
     })
+});
+
+// UPDATE /api/personas
+router.post('/update/:id', (req, res) => {
+    Persona.update({
+        rut: req.body.rut,
+        nombres: req.body.nombres,
+        primerApellido: req.body.primerApellido,
+        segundoApellido: req.body.segundoApellido,
+        email: req.body.email,
+        contrasena: req.body.contraseña,
+        telefono: req.body.telefono,
+        role: req.body.role
+    }, {
+        where: {
+            id: req.params.id
+        }
+    }).then(result => {
+        res.json(result);
+    });
 });
 
 

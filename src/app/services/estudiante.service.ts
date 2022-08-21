@@ -12,7 +12,7 @@ const base_url = environment.url_api;
 export class EstudianteService {
   constructor(private readonly http: HttpClient) { }
 
-  private readonly api_url = `${base_url}/estudiante`;
+  private readonly api_url = `${base_url}/personas`;
 
   get token(): string {
     return localStorage.getItem('token') || '';

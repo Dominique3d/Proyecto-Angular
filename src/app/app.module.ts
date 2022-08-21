@@ -36,6 +36,7 @@ import { PerfilAlumnoComponent } from './perfiles/alumno/perfil-alumno/perfil-al
 import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instructor/perfil-instructor.component';
 import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
+import { ModalEditarEstudianteComponent } from './services/modal-editar-estudiante/modal-editar-estudiante.component';
 
 const routes: Routes = [
   {path: '', component: AppComponent},
@@ -62,7 +63,8 @@ const routes: Routes = [
       PerfilAlumnoComponent,
       PerfilInstructorComponent,
       MatriculasComponent,
-      MisCursosComponent
+      MisCursosComponent,
+      ModalEditarEstudianteComponent
    ],
   imports: [
     BrowserModule,
