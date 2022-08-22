@@ -24,8 +24,8 @@
               </thead>
               <tbody *ngFor="let estudiante of estudiantes">
                 <tr>
-                  <td scope="row">{{estudiante.nombre}}</td>
-                  <td>{{estudiante.correo}}</td>
+                  <td scope="row">{{estudiante.nombres}} {{estudiante.primerApellido}} {{estudiante.segundoApellido}}</td>
+                  <td>{{estudiante.email}}</td>
                   <td>{{estudiante.telefono}}</td>
                   <td><button class="verPerfil"> Ver Perfil </button> </td>
                   <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>

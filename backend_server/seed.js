@@ -11,7 +11,7 @@ const personas = [
     { rut:197970718, nombres: "Dominique", primerApellido: "Del Valle", segundoApellido: "Durán", email: "dominique@gmail.com", contrasena: 123456, telefono: 952166352, role: 1 },
     { rut:197970719, nombres: "Claudio", primerApellido: "Macher", segundoApellido: "Chávez", email: "claudio@gmail.com", contrasena: 1234567, telefono: 952168273, role: 1 },
 ];
->>>>>>> 3a1b0e622482a2973ab0b2539664b437bb00ac1e
+// >>>>>>> 3a1b0e622482a2973ab0b2539664b437bb00ac1e
 
 const planes = [
     { precio: 150000, nombre: "PLAN ESTANDAR", n_clases_practicas: 12, n_clases_teoricas: 8 },
