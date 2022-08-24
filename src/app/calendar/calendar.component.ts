@@ -11,6 +11,8 @@ import { ModalAgendaService } from '../services/modal-agenda.service';
 })
 export class CalendarComponent implements OnInit {
 
+
+
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     locale: 'es',
@@ -34,10 +36,7 @@ export class CalendarComponent implements OnInit {
     },
 
     dateClick: this.handleDateClick.bind(this), // bind is important!
-    events: [
-      { title: 'event 1', date: '2022-08-01', start: "2022-08-08T09:30:00", description: "Hola Prueba" },
-      { title: 'event 2', date: '2022-08-02' }
-    ]
+    
 
   };
 
@@ -46,14 +45,41 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
   }
-
   handleDateClick(arg: any) {
     this.modalAgendaService.mostrarModal();
+
+  }
+  bloqueo(){
+    const today = new Date()
+    const yesterday = new Date(today)
+
+        yesterday.setDate(yesterday.getDate() - 1)
+
+        today.toDateString()
+        yesterday.toDateString()
+
+        if(yesterday>today){
+         alert("no")
+        }
+        else{
+          this.handleDateClick
+        }
+    
+                   
   }
 
+  
+
   toggleWeekends() {
-    this.calendarOptions.weekends = !this.calendarOptions.weekends // toggle the boolean!
+    //this.calendarOptions.weekends = !this.calendarOptions.weekends // toggle the boolean!
   }
+  
 
 
 }
+
+
+function arg(arg: any, any: any) {
+  throw new Error('Function not implemented.');
+}
+
