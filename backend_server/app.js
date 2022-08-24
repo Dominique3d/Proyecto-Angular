@@ -42,7 +42,7 @@ app.post("/api/token", (request, response) => {
       "buy_order": "ordenCompra12345678",
       "session_id": "sesion1234557545",
       "amount": 150000,
-      "return_url": "http://localhost:3000/api/redirect",
+      "return_url": "http://localhost:3030/api/redirect",
     }
     try {
         axios.post(url, datosDeCompra, {headers: headers})

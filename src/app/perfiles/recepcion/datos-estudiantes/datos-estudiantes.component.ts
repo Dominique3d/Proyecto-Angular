@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EstudianteService } from 'src/app/services/estudiante.service';
+import { PersonaService } from 'src/app/services/persona.service';
 import { Estudiante } from 'src/app/interfaces/estudiante.interface';
-import { ModalEditarEstudianteService } from 'src/app/services/modal-editar-estudiante.service';
+import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
 
 @Component({
   selector: 'app-datos-estudiantes',
@@ -13,12 +13,12 @@ export class DatosEstudiantesComponent implements OnInit {
   estudiantes: any[]=[];
 
   constructor(
-    public modalEditarEstudianteService: ModalEditarEstudianteService,
-    private estudianteService: EstudianteService
+    public modalEditarPersonaService: ModalEditarPersonaService,
+    private personaService: PersonaService
   ) { }
 
   ngOnInit(): void {
-    this.estudianteService.getAllEstudiantes().subscribe((res:any[]) => {
+    this.personaService.getAllEstudiantes().subscribe((res:any[]) => {
       this.estudiantes = res;
       console.log(this.estudiantes);
     },
@@ -26,6 +26,6 @@ export class DatosEstudiantesComponent implements OnInit {
   }
 
   abrirModal(){
-    this.modalEditarEstudianteService.mostrarModal();
+    this.modalEditarPersonaService.mostrarModal();
   }
 }

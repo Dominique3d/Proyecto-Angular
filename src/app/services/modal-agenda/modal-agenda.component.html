@@ -1,1 +1,26 @@
-<p>modal-agenda works!</p>
+<div class="modal" [ngStyle]="{'display': modalAgendaService.oculto}" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form [formGroup]="formAgenda" (ngSubmit)="saveData()" novalidate>
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h2 class="modal-tittle">Editar datos de estudiante</h2>
+                    <button (click)="ocultarModal()" type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group row">
+                        Body
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button (click)="ocultarModal()" type="button" class="btn btn-danger">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

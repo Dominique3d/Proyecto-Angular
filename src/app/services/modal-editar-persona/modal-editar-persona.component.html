@@ -1,10 +1,10 @@
-<div class="modal" [ngStyle]="{'display': modalEditarEstudianteService.oculto}" tabindex="-1" role="dialog">
+<div class="modal" [ngStyle]="{'display': modalEditarPersonaService.oculto}" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form [formGroup]="formEditarEstudiante" (ngSubmit)="saveData()" novalidate>
+            <form [formGroup]="formEditarPersona" (ngSubmit)="saveData()" novalidate>
                 <!-- Modal header -->
                 <div class="modal-header">
-                    <h2 class="modal-tittle">Editar datos de estudiante</h2>
+                    <h2 class="modal-tittle">Editar datos de persona</h2>
                     <button (click)="ocultarModal()" type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 

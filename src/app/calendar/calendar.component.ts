@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions }from '@fullcalendar/core';  // useful for typechecking
+import { ModalAgendaService } from '../services/modal-agenda.service';
 
 
 
@@ -41,13 +42,13 @@ export class CalendarComponent implements OnInit {
   };
 
 
-  constructor() { }
+  constructor(public modalAgendaService: ModalAgendaService) { }
 
   ngOnInit() {
   }
 
   handleDateClick(arg: any) {
-    alert('date click! ' + arg.dateStr)
+    this.modalAgendaService.mostrarModal();
   }
 
   toggleWeekends() {

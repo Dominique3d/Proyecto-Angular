@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModalEditarEstudianteService } from '../modal-editar-estudiante.service';
+import { ModalEditarPersonaService } from '../modal-editar-persona.service';
 
 @Component({
-  selector: 'app-modal-editar-estudiante',
-  templateUrl: './modal-editar-estudiante.component.html',
-  styleUrls: ['./modal-editar-estudiante.component.css']
+  selector: 'app-modal-editar-persona',
+  templateUrl: './modal-editar-persona.component.html',
+  styleUrls: ['./modal-editar-persona.component.css']
 })
-export class ModalEditarEstudianteComponent implements OnInit {
+export class ModalEditarPersonaComponent implements OnInit {
 
-  formEditarEstudiante: FormGroup;
+  formEditarPersona: FormGroup;
 
-  constructor(public modalEditarEstudianteService: ModalEditarEstudianteService,
+  constructor(public modalEditarPersonaService: ModalEditarPersonaService,
               private formBuilder: FormBuilder) {
-    this.formEditarEstudiante = this.formBuilder.group({
+    this.formEditarPersona = this.formBuilder.group({
       rut: ['', [Validators.required]],
       nombres: ['', [Validators.required]],
       primerApellido: ['', [Validators.required]],
@@ -29,14 +29,14 @@ export class ModalEditarEstudianteComponent implements OnInit {
   }
 
   mostrarModal(){
-    this.modalEditarEstudianteService.mostrarModal();
+    this.modalEditarPersonaService.mostrarModal();
   }
 
   ocultarModal(){
-    this.modalEditarEstudianteService.ocultarModal();
+    this.modalEditarPersonaService.ocultarModal();
   }
 
   saveData(){
-    console.log(this.formEditarEstudiante.value);
+    console.log(this.formEditarPersona.value);
   }
 }

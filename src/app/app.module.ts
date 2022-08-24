@@ -47,7 +47,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   interactionPlugin
 ]);
 
-import { ModalEditarEstudianteComponent } from './services/modal-editar-estudiante/modal-editar-estudiante.component';
+import { ModalEditarPersonaComponent } from './services/modal-editar-persona/modal-editar-persona.component';
 
 
 const routes: Routes = [
@@ -76,7 +76,7 @@ const routes: Routes = [
       PerfilInstructorComponent,
       MatriculasComponent,
       MisCursosComponent,
-      ModalEditarEstudianteComponent,
+      ModalEditarPersonaComponent,
       ModalAgendaComponent
    ],
   imports: [

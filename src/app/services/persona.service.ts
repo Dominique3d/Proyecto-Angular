@@ -10,19 +10,22 @@ const base_url = environment.url_api;
 @Injectable({
   providedIn: 'root'
 })
-export class EstudianteService {
-   constructor(private http: HttpClient) { }
+export class PersonaService {
+  constructor(private http: HttpClient) { }
 
-   private readonly api_url = `${base_url}/personas`;
-   
+  private readonly api_url = `${base_url}/personas`;
+
   // get token(): string {
   //   return localStorage.getItem('token') || '';
   // }
-   getAllPersonas(): Observable<any> {
-     return this.http.get<any>(`${this.api_url}`).pipe(map((res:any) => res.data));
-   }
-   getAllEstudiantes(): Observable<any> {
+  getAllPersonas(): Observable<any> {
+    return this.http.get<any>(`${this.api_url}`).pipe(map((res: any) => res.data));
+  }
+  getAllEstudiantes(): Observable<any> {
     return this.http.get<any>(`${this.api_url}/getAllEstudiantes`);
+  }
+  getAllInstructores(): Observable<any> {
+    return this.http.get<any>(`${this.api_url}/getAllInstructores`);
   }
   // getEstudianteById(id: string): Observable<any> {
   //   return this.http.get<any>(`${this.api_url}/${id}`);
