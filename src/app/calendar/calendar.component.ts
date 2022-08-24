@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import { Calendar } from '@fullcalendar/core';
+import { CalendarOptions }from '@fullcalendar/core';  // useful for typechecking
 
 
 
@@ -14,35 +10,49 @@ import { Calendar } from '@fullcalendar/core';
 })
 export class CalendarComponent implements OnInit {
 
-  public events: any[];
-  public options: any;
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    locale: 'es',
+    headerToolbar: {
+      left: 'today',  //CAMBIAR EL BOTON TODAY a HOY
+      center: 'title',
+      right: 'prev,next',
+
+    },
+    buttonText: {
+      today: 'Hoy'
+    },
+
+    weekends: false
+    ,
+    views: {
+      dayGridMonth: { // name of view
+        titleFormat: { year: 'numeric', month: 'long' }
+        // other view-specific options here
+      }
+    },
+
+    dateClick: this.handleDateClick.bind(this), // bind is important!
+    events: [
+      { title: 'event 1', date: '2022-08-01', start: "2022-08-08T09:30:00", description: "Hola Prueba" },
+      { title: 'event 2', date: '2022-08-02' }
+    ]
+
+  };
+
 
   constructor() { }
 
   ngOnInit() {
-
-    this.options = {
-      plugins: [dayGridPlugin, timeGridPlugin,interactionPlugin],
-      defaulDate: new Date(),
-      locale: 'es',
-     
-      header:{
-        left: 'prev,next',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      editable: true,
-    }
-
-    this.events = [
-      {
-        title: "Clase Alicia",
-        start: "2022-06-01T09:30:00",
-        description: "Evento 1"
-      }
-    ]
-
-
   }
+
+  handleDateClick(arg: any) {
+    alert('date click! ' + arg.dateStr)
+  }
+
+  toggleWeekends() {
+    this.calendarOptions.weekends = !this.calendarOptions.weekends // toggle the boolean!
+  }
+
 
 }

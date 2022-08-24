@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
 import { HttpClientModule } from '@angular/common/http';
 
 //Rutas
@@ -28,7 +31,6 @@ import { AlumnoComponent } from './perfiles/alumno/alumno.component';
 import { InstructorComponent } from './perfiles/instructor/instructor.component';
 import { RecepcionComponent } from './perfiles/recepcion/recepcion.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { FullCalendarModule } from 'primeng/fullcalendar';
 import { DatosEstudiantesComponent } from './perfiles/recepcion/datos-estudiantes/datos-estudiantes.component';
 import { DatosInstructoresComponent } from './perfiles/recepcion/datos-instructores/datos-instructores.component';
 import { SolicitudesComponent } from './perfiles/recepcion/solicitudes/solicitudes.component';
@@ -37,6 +39,14 @@ import { PerfilAlumnoComponent } from './perfiles/alumno/perfil-alumno/perfil-al
 import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instructor/perfil-instructor.component';
 import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
+import { ModalAgendaComponent } from './services/modal-agenda/modal-agenda.component';
+
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
+
 import { ModalEditarEstudianteComponent } from './services/modal-editar-estudiante/modal-editar-estudiante.component';
 
 
@@ -66,9 +76,11 @@ const routes: Routes = [
       PerfilInstructorComponent,
       MatriculasComponent,
       MisCursosComponent,
-      ModalEditarEstudianteComponent
+      ModalEditarEstudianteComponent,
+      ModalAgendaComponent
    ],
   imports: [
+
     BrowserModule,
     FormsModule,
     APP_ROUTING,
