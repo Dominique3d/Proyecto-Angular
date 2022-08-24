@@ -19,63 +19,54 @@
           <table class="table">
             <tbody>
               <tr>
-                <td style="width: 350px">Nombre:</td>
+                <td style="width: 350px; font-weight: 500; font-size: large;" >Nombre:</td>
                 <td class="middle"></td>
                 <td class="middle"></td>
-                <td href="#" style="color: #176496; cursor: pointer">Editar</td>
               </tr>
               <tr>
-                <td style="width: 350px">Apellido:</td>
+                <td style="width: 350px; font-weight: 500; font-size: large;">Apellido:</td>
                 <td class="middle"></td>
                 <td class="middle"></td>
-                <td href="#" style="color: #176496; cursor: pointer">Editar</td>
               </tr>
               <tr>
-                <td style="width: 350px">Dirección de correo electrónico</td>
+                <td style="width: 350px; font-weight: 500; font-size: large;">Dirección de correo electrónico:</td>
                 <td class="middle"></td>
                 <td class="middle"></td>
-                <td href="#" style="color: #176496; cursor: pointer">Editar</td>
               </tr>
               <tr>
-                <td style="width: 350px">Contraseña:</td>
+                <td style="width: 350px; font-weight: 500; font-size: large;">Contraseña:</td>
                 <td class="middle"></td>
                 <td class="middle"></td>
-                <td href="#" style="color: #176496; cursor: pointer">Editar</td>
               </tr>
               <tr>
-                <td style="width: 350px">Sexo:</td>
+                <td style="width: 350px; font-weight: 500; font-size: large; font-size: large;">Sexo:</td>
                 <td class="middle"></td>
                 <td class="middle"></td>
-                <td href="#" style="color: #176496; cursor: pointer">Editar</td>
               </tr>
               <tr>
-                <td style="width: 350px">Instructor Asignado:</td>
+                <td style="width: 350px; font-weight: 500; font-size: large;">Instructor Asignado:</td>
                 <td class="middle"></td>
                 <td class="middle"></td>
-                <td href="#" style="color: #176496; cursor: pointer">Editar</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div style="margin-top: 30px; padding-left: 250px">
-          <button
-            style="
-              color: white;
 
-              border-radius: 5px;
-              background-color: #176496;
-              padding: 10px;
-              margin-right: 120px;
-              font-size: large;
-              padding-left: 35px;
-              padding-right: 35px;
-            "
-          >
-            Guardar
-          </button>
+          <button style=" color: white;
+          border-radius: 5px;
+          background-color: #176496;
+          padding: 10px;
+          margin-right: 120px;
+          font-size: large;
+          padding-left: 35px;
+          padding-right: 35px;"
+           (click)="abrirModal()">Editar</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-modal-editar-estudiante></app-modal-editar-estudiante>
