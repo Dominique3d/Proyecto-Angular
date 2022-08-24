@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/services/persona.service';
-import { Estudiante } from 'src/app/interfaces/estudiante.interface';
+import { Persona } from 'src/app/interfaces/persona.interface';
 import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class DatosEstudiantesComponent implements OnInit {
     err => console.log(err))
   }
 
-  abrirModal(){
-    this.modalEditarPersonaService.mostrarModal();
+  abrirModal(estudiante: Persona){
+    this.modalEditarPersonaService.mostrarModal(estudiante);
   }
 }

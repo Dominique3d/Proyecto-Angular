@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { environment } from 'src/environments/environment';
-import { Estudiante } from '../interfaces/estudiante.interface';
+import { Persona } from '../interfaces/persona.interface';
 
 const base_url = environment.url_api;
 

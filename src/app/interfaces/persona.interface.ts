@@ -1,4 +1,5 @@
-export interface Estudiante {
+export interface Persona {
+    id: number;
     rut: string;
     nombres: string;
     primerApellido: string;

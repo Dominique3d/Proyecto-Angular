@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalEditarPersonaService } from '../modal-editar-persona.service';
+import { Persona } from 'src/app/interfaces/persona.interface';
 
 @Component({
   selector: 'app-modal-editar-persona',
@@ -9,6 +10,7 @@ import { ModalEditarPersonaService } from '../modal-editar-persona.service';
 })
 export class ModalEditarPersonaComponent implements OnInit {
 
+  personaSelect: Persona | undefined;
   formEditarPersona: FormGroup;
 
   constructor(public modalEditarPersonaService: ModalEditarPersonaService,
@@ -22,15 +24,18 @@ export class ModalEditarPersonaComponent implements OnInit {
       contrasena: ['', [Validators.required]],
       telefono: ['', [Validators.required]],
       role: ['', [Validators.required]]
-    })
+    }),
+    this.setPersonaSelect();
   }
 
   ngOnInit(): void {
+    this.setPersonaSelect();
+    console.log ("On init " + this.personaSelect);
   }
 
-  mostrarModal(){
-    this.modalEditarPersonaService.mostrarModal();
-  }
+  // mostrarModal(persona: Persona){
+  //   this.modalEditarPersonaService.mostrarModal();
+  // }
 
   ocultarModal(){
     this.modalEditarPersonaService.ocultarModal();
@@ -39,4 +44,10 @@ export class ModalEditarPersonaComponent implements OnInit {
   saveData(){
     console.log(this.formEditarPersona.value);
   }
+  
+  setPersonaSelect() {
+    this.personaSelect = this.modalEditarPersonaService.personaSelect;
 }
+}
+
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/services/persona.service';
 import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
+import { Persona } from 'src/app/interfaces/persona.interface';
 
 @Component({
   selector: 'app-datos-instructores',
@@ -24,7 +25,7 @@ export class DatosInstructoresComponent implements OnInit {
     err => console.log(err))
   }
 
-  abrirModal(){
-    this.modalEditarPersonaService.mostrarModal();
+  abrirModal(instructor: Persona){
+    this.modalEditarPersonaService.mostrarModal(instructor);
   }
 }
