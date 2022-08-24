@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 //Rutas
 import { APP_ROUTING } from './app.routes';
@@ -38,6 +39,7 @@ import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
 import { ModalEditarEstudianteComponent } from './services/modal-editar-estudiante/modal-editar-estudiante.component';
 
+
 const routes: Routes = [
   {path: '', component: AppComponent},
 ];
@@ -70,6 +72,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     APP_ROUTING,
+    HttpClientModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
     MatSliderModule,
@@ -78,7 +81,8 @@ const routes: Routes = [
     MatFormFieldModule,
     MatIconModule,
     BrowserAnimationsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

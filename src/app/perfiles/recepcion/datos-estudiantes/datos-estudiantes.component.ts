@@ -13,10 +13,16 @@ export class DatosEstudiantesComponent implements OnInit {
   estudiantes: any[]=[];
 
   constructor(
-    public modalEditarEstudianteService: ModalEditarEstudianteService
+    public modalEditarEstudianteService: ModalEditarEstudianteService,
+    private estudianteService: EstudianteService
   ) { }
 
   ngOnInit(): void {
+    this.estudianteService.getAllEstudiantes().subscribe((res:any[]) => {
+      this.estudiantes = res;
+      console.log(this.estudiantes);
+    },
+    err => console.log(err))
   }
 
   abrirModal(){

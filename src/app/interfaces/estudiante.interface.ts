@@ -1,12 +1,10 @@
 export interface Estudiante {
-    id: number;
-    idPersona: number;
+    rut: string;
     nombres: string;
     primerApellido: string;
     segundoApellido: string;
     email: string;
     contrasena: string;
     telefono: number;
-    rut: string;
-    rol: string;
+    role: string;
 }

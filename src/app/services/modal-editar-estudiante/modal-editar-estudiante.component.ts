@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalEditarEstudianteService } from '../modal-editar-estudiante.service';
 
 @Component({
@@ -8,7 +9,21 @@ import { ModalEditarEstudianteService } from '../modal-editar-estudiante.service
 })
 export class ModalEditarEstudianteComponent implements OnInit {
 
-  constructor(public modalEditarEstudianteService: ModalEditarEstudianteService) { }
+  formEditarEstudiante: FormGroup;
+
+  constructor(public modalEditarEstudianteService: ModalEditarEstudianteService,
+              private formBuilder: FormBuilder) {
+    this.formEditarEstudiante = this.formBuilder.group({
+      rut: ['', [Validators.required]],
+      nombres: ['', [Validators.required]],
+      primerApellido: ['', [Validators.required]],
+      segundoApellido: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      contrasena: ['', [Validators.required]],
+      telefono: ['', [Validators.required]],
+      role: ['', [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
   }
@@ -19,5 +34,9 @@ export class ModalEditarEstudianteComponent implements OnInit {
 
   ocultarModal(){
     this.modalEditarEstudianteService.ocultarModal();
+  }
+
+  saveData(){
+    console.log(this.formEditarEstudiante.value);
   }
 }
