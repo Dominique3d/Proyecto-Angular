@@ -23,6 +23,8 @@ export class CalendarComponent implements OnInit {
       today: 'Hoy'
     },
 
+    weekends: false
+    ,
     views: {
       dayGridMonth: { // name of view
         titleFormat: { year: 'numeric', month: 'long' }
