@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/services/persona.service';
-import { Estudiante } from 'src/app/interfaces/estudiante.interface';
+import { Persona } from 'src/app/interfaces/persona.interface';
 import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona
 export class PerfilInstructorComponent implements OnInit {
 
   instructores: any[]=[];
+  persona : Persona;
 
   constructor( 
     public modalEditarPersonaService: ModalEditarPersonaService,
@@ -28,6 +29,6 @@ export class PerfilInstructorComponent implements OnInit {
 
 
   abrirModal(){
-    this.modalEditarPersonaService.mostrarModal();
+    this.modalEditarPersonaService.mostrarModal(this.persona);
   }
 }
