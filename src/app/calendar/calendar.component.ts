@@ -49,26 +49,6 @@ export class CalendarComponent implements OnInit {
     this.modalAgendaService.mostrarModal();
 
   }
-  bloqueo(){
-    const today = new Date()
-    const yesterday = new Date(today)
-
-        yesterday.setDate(yesterday.getDate() - 1)
-
-        today.toDateString()
-        yesterday.toDateString()
-
-        if(yesterday>today){
-         alert("no")
-        }
-        else{
-          this.handleDateClick
-        }
-    
-                   
-  }
-
-  
 
   toggleWeekends() {
     //this.calendarOptions.weekends = !this.calendarOptions.weekends // toggle the boolean!
