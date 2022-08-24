@@ -70,7 +70,7 @@ router.get('/getAllInstructores', (req, res) => {
             as: "plans",
             attributes: ['nombre'],
         }],
-        attributes: ['nombres', 'primerApellido', 'segundoApellido'],
+        attributes: ['rut', 'nombres', 'primerApellido', 'segundoApellido', 'email', 'contrasena', 'telefono', 'role'],
             where: {
             role: 1
         }

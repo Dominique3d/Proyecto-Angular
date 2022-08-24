@@ -1,31 +1,38 @@
 <body>
-  
 
-    <div class="container">
+
+  <div class="container">
     <div class="vh-100 gradient-custom">
       <div class="container  h-200">
         <div class="row d-flex justify-content-center align-items-center ">
-    
+
           <div class="card">
-    
+
             <div class="card-body p-5 text-center">
-    
-    
-    
+
+
+
               <div class="card-body">
-    
-                <p-fullCalendar [events]="events" [options]="options"> </p-fullCalendar>
+
+                <full-calendar [options]="calendarOptions"></full-calendar>
+                <!-- <button (click)="toggleWeekends()">Mostrar/Ocultar Fin de Semana</button> -->
+                  
               </div>
-    
+
             </div>
-    
+
           </div>
-    
+
         </div>
-    
+
       </div>
-    
+
     </div>
-    
-    </div>
-    </body>
+
+  </div>
+  <script>
+
+  </script>
+</body>
+
+<app-modal-agenda></app-modal-agenda>

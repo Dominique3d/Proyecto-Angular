@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EstudianteService } from 'src/app/services/estudiante.service';
-import { Estudiante } from 'src/app/interfaces/estudiante.interface';
-import { ModalEditarEstudianteService } from 'src/app/services/modal-editar-estudiante.service';
+import { PersonaService } from 'src/app/services/persona.service';
+import { Persona } from 'src/app/interfaces/persona.interface';
+import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
 @Component({
   selector: 'app-perfil-alumno',
   templateUrl: './perfil-alumno.component.html',
@@ -11,14 +11,15 @@ import { ModalEditarEstudianteService } from 'src/app/services/modal-editar-estu
 export class PerfilAlumnoComponent implements OnInit {
 
   estudiantes: any[]=[];
+  persona: Persona;
 
   constructor( 
-    public modalEditarEstudianteService: ModalEditarEstudianteService,
-    private estudianteService: EstudianteService
+    public modalEditarPersonaService: ModalEditarPersonaService,
+    private personaService: PersonaService
   ) { }
 
   ngOnInit(): void {
-    this.estudianteService.getAllEstudiantes().subscribe((res:any[]) => {
+    this.personaService.getAllEstudiantes().subscribe((res:any[]) => {
       this.estudiantes = res;
       console.log(this.estudiantes);
     },
@@ -27,6 +28,6 @@ export class PerfilAlumnoComponent implements OnInit {
 
 
   abrirModal(){
-    this.modalEditarEstudianteService.mostrarModal();
+    this.modalEditarPersonaService.mostrarModal(this.persona);
   }
 }

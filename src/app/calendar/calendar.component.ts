@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import { Calendar } from '@fullcalendar/core';
+import { CalendarOptions }from '@fullcalendar/core';  // useful for typechecking
+import { ModalAgendaService } from '../services/modal-agenda.service';
 
 
 
@@ -14,35 +11,55 @@ import { Calendar } from '@fullcalendar/core';
 })
 export class CalendarComponent implements OnInit {
 
-  public events: any[];
-  public options: any;
 
-  constructor() { }
+
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    locale: 'es',
+    headerToolbar: {
+      left: 'today',  //CAMBIAR EL BOTON TODAY a HOY
+      center: 'title',
+      right: 'prev,next',
+
+    },
+    buttonText: {
+      today: 'Hoy'
+    },
+
+    weekends: false
+    ,
+    views: {
+      dayGridMonth: { // name of view
+        titleFormat: { year: 'numeric', month: 'long' }
+        // other view-specific options here
+      }
+    },
+
+    dateClick: this.handleDateClick.bind(this), // bind is important!
+    
+
+  };
+
+
+  constructor(public modalAgendaService: ModalAgendaService) { }
 
   ngOnInit() {
-
-    this.options = {
-      plugins: [dayGridPlugin, timeGridPlugin,interactionPlugin],
-      defaulDate: new Date(),
-      locale: 'es',
-     
-      header:{
-        left: 'prev,next',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      editable: true,
-    }
-
-    this.events = [
-      {
-        title: "Clase Alicia",
-        start: "2022-06-01T09:30:00",
-        description: "Evento 1"
-      }
-    ]
-
+  }
+  handleDateClick(arg: any) {
+    this.modalAgendaService.mostrarModal();
 
   }
 
+  toggleWeekends() {
+    //this.calendarOptions.weekends = !this.calendarOptions.weekends // toggle the boolean!
+  }
+  
+
+
 }
+
+
+function arg(arg: any, any: any) {
+  throw new Error('Function not implemented.');
+}
+

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ModalEditarEstudianteService {
+export class ModalAgendaService {
 
   public oculto: string = '';
 
@@ -11,11 +11,11 @@ export class ModalEditarEstudianteService {
 
   ocultarModal(){
     this.oculto = 'none';
-    console.log('ocultar modal');
+    console.log('Ocultar modal');
   }
 
   mostrarModal(){
     this.oculto = 'block';
-    console.log('mostrar modal');
+    console.log('Mostrar modal agenda');
   }
 }

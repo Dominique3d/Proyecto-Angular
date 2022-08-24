@@ -19,11 +19,11 @@ require('./src/models/relaciones');
 // });
 
 // const cors = require('cors');
-app.use(cors({origin: 'http://localhost:4009'}));
+app.use(cors({origin: 'http://localhost:8080'}));
 
 
 // set port, listen for requests
-const PORT = process.env.PORT || 4009;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 // Para poder rellenar el req.body
@@ -42,7 +42,7 @@ app.post("/api/token", (request, response) => {
       "buy_order": "ordenCompra12345678",
       "session_id": "sesion1234557545",
       "amount": 150000,
-      "return_url": "http://localhost:3000/api/redirect",
+      "return_url": "http://localhost:3030/api/redirect",
     }
     try {
         axios.post(url, datosDeCompra, {headers: headers})

@@ -30,7 +30,15 @@
                   <td scope="row">{{instructor.nombre}}</td>
                   <td>{{instructor.email}}</td>
                   <td>{{instructor.telefono}}</td>
-                  <td><button class="verPerfil"> Ver Perfil </button> </td>
+                  <td><button style="    color: white;
+                    border-radius: 5px;
+                    background-color: #176496;
+                    display: block;
+                    width: 100px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    height: 40px;
+                  " (click)="abrirModal(instructor)">Editar</button> </td>
                   <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
                 </tr>
               </tbody>
@@ -45,9 +53,11 @@
           padding: 10px;
           margin-right: 215px;
           font-size: x-large;
-          margin-left: 40%; ">Agregar Instructores </button>
+          margin-left: 40%; ">Agregar Instructor </button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-modal-editar-persona></app-modal-editar-persona>
