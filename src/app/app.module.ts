@@ -39,6 +39,7 @@ import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
 import { ModalEditarEstudianteComponent } from './services/modal-editar-estudiante/modal-editar-estudiante.component';
 
+
 const routes: Routes = [
   {path: '', component: AppComponent},
 ];
@@ -71,6 +72,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     APP_ROUTING,
+    HttpClientModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
     MatSliderModule,
