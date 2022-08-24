@@ -19,11 +19,11 @@ require('./src/models/relaciones');
 // });
 
 // const cors = require('cors');
-app.use(cors({origin: 'http://localhost:4009'}));
+app.use(cors({origin: 'http://localhost:8080'}));
 
 
 // set port, listen for requests
-const PORT = process.env.PORT || 4009;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 // Para poder rellenar el req.body
