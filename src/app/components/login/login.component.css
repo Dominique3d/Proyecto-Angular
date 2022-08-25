@@ -1,4 +1,24 @@
+body{
+  background: url(\src\assets\autos.png) no-repeat center center fixed;
+  background-size: cover;
+  width:auto;
+  height: 100vh;
+}
 
+.mat-form-field-flex {
+  width: 360%;
+}
+#ingresar{
+  background-color: rgb(39, 61, 188);
+  color: white;
+  opacity: 1;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
 @media (min-width: 768px) {
   .omb_row-sm-offset-3 div:first-child[class*="col-"] {
       margin-left: 25%;
@@ -10,7 +30,10 @@
   font-size: x-small;
   color: black
 }
-
+.eye-button{
+  background: transparent;
+  border: none;
+}
 
 .omb_login .omb_authTitle {
   text-align: center;
@@ -21,8 +44,16 @@
 .card {
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 transition: 0.3s;
-margin: 0 auto; 
+margin: 0 auto;
 border-radius: 5px; /* 5px rounded corners */
+  border-color: white;
+  border-style: solid;
+  background-color: rgb(255, 255, 255);
+  border-width: 3px;
+  border-radius: 10px;
+  height: max-content;
+  opacity: 0.85;
+
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
@@ -30,16 +61,13 @@ img {
 border-radius: 5px 5px 0 0;
 }
 .omb_login .omb_socialButtons a {
-  color: white; /* In yourUse @body-bg*/ 
+  color: white; /* In yourUse @body-bg*/
   opacity:0.9;
 }
 .omb_login .omb_socialButtons a:hover {
   color: white;
-  opacity:1;    	
+  opacity:1;
 }
-.omb_login .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
-.omb_login .omb_socialButtons .omb_btn-twitter {background: #00aced;}
-.omb_login .omb_socialButtons .omb_btn-google {background: #c32f10;}
 
 
 .omb_login .omb_loginOr {
@@ -68,7 +96,7 @@ margin-bottom: 0px !important;
   background-color: white;
   width: 3em;
   text-align: center;
-}			
+}
 
 .omb_login .omb_loginForm .input-group.i {
   width: 2em;
@@ -79,7 +107,11 @@ margin-bottom: 0px !important;
 
 @media (min-width: 768px) {
   .omb_login .omb_forgotPwd {
-      text-align: right;
+      text-align: center;
       margin-top:10px;
-  }		
-} 
+  }
+}
+
+.zero {
+  width: 200px;
+}

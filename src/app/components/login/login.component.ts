@@ -11,8 +11,8 @@ import { LoginService } from '../../services/login/login.service';
 export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
-
-  constructor(private loginService: LoginService, private formBuilder: FormBuilder, private router : Router) { 
+  hide = true;
+  constructor(private loginService: LoginService, private formBuilder: FormBuilder, private router : Router) {
     this.formLogin = this.formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
