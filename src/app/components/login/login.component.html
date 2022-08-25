@@ -1,69 +1,85 @@
+
 <body>
 
-<section class="vh-100 gradient-custom">
+  <section class="vh-100 gradient-custom">
     <div class="container  h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card">
- 
-            <div class="card-body p-5 text-center">
-  
-              <div class="mb-md-5 mt-md-4 pb-5">
-  
-                <h2 style="color:black" class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
-                <p style="color:black" class="text-dark-50 mb-5">Porfavor ingresa tu correo y contraseña!</p>
-  
-                <form [formGroup]="formInscripcion" (ngSubmit)="onRegister($event)" class="example-form">
-                  <mat-form-field class="example-full-width" appearance="fill">
+
+        <div class="omb_login">
+          <br>
+          <br>
+          <h2 style="text-align: center; margin-bottom: 0px; font-size: x-large;"> INICIAR SESIÓN</h2>
+          <h3 class="omb_authTitle" style="color: black;">Ingresa tu correo y contraseña para iniciar sesión! <br> </h3>
+          <br>
+          <div class="row omb_row-sm-offset-3">
+            <div class="col-xs-12 col-sm-6">
+              <form class="omb_loginForm" [formGroup]="formLogin" (ngSubmit)="login()" autocomplete="off" method="POST">
+                <div class="input-group">
+                  <!-- <i style="margin-top: 10px;" class="fa fa-user">&nbsp;</i> -->
+                  <mat-form-field class="example-full-width" appearance="fill" >
                     <mat-label>Email</mat-label>
-                    <input style="color: black;" class="input-color" type="email" matInput type="email"
-                      formControlName="email" placeholder="Ej. pat@ejemplo.com">
+                    <input style="color: black;"class="input-color" type="email" matInput type="email"
+                      formControlName="email" placeholder="Ej. mail@ejemplo.com">
+                      <mat-icon matSuffix>email</mat-icon>
                     <!-- <mat-hint style="color: white;" >Errors appear instantly!</mat-hint> -->
                     <mat-error
-                      *ngIf="this.formInscripcion.get('email')!.hasError('email') && this.formInscripcion.get('email')!.dirty">
+                      *ngIf="this.formLogin.get('email')!.hasError('email') && this.formLogin.get('email')!.dirty">
                       Ingrese un correo valido
                     </mat-error>
                     <mat-error
-                      *ngIf="this.formInscripcion.get('email')!.hasError('required') && this.formInscripcion.get('email')!.dirty">
+                      *ngIf="this.formLogin.get('email')!.hasError('required') && this.formLogin.get('email')!.dirty">
                       El correo es <strong>requerido</strong>
                     </mat-error>
                   </mat-form-field>
+                </div>
+                <span class="help-block"></span>
+                <br>
+                <div class="input-group">
+                  <!-- <i style="margin-top: 10px;" class="fa fa-lock">&nbsp;</i> -->
                   <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Contraseña</mat-label>
                     <input style="color: black;" formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-                    <button class="eye-button" mat-icon-button matSuffix (click)="hide = !hide"
+                    <button class="eye-button" style="padding: 0%;" mat-icon-button matSuffix (click)="hide = !hide"
                       [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                     <mat-error
-                      *ngIf="this.formInscripcion.get('password')!.hasError('password') && this.formInscripcion.get('password')!.dirty">
+                      *ngIf="this.formLogin.get('password')!.hasError('password') && this.formLogin.get('password')!.dirty">
                       Ingrese minimo 5 caracteres
                     </mat-error>
                   </mat-form-field>
-                  <p style="color:black" class="text small mb-5 pb-lg-2"><a class="click-text fw-bold"
-                      href="#!">¿Olvidaste tu contraseña?</a></p>
-               
-                  
-                      <button [disabled]="!this.formInscripcion.valid" id="ingresar" class="btn btn-outline-dark btn-lg px-5 " type="submit">Ingresar</button>
-               
-                    </form>
-                <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                  <a href="#!" class="text-black"><i class="fab fa-facebook-f fa-lg"></i></a>
-                  <a href="#!" class="text-black"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                  <a href="#!" class="text-black"><i class="fab fa-google fa-lg"></i></a>
                 </div>
+
+                <label class="checkbox">
+                  <input type="checkbox" value="remember-me" style="margin-bottom: 30px;">&nbsp;Recuérdame
+                </label>
+                <button class="btn btn-lg btn-primary btn-block"  style="margin-left: 50px; padding-left: 40px; padding-right: 40px;" type="submit">Ingresar</button>
+                <br>
+                <p class="omb_forgotPwd">
+                  <a  style="font-size: small;" href="recuperarPassword">¿Olvidaste tu contraseña?</a>
+                </p>
+              </form>
+              <div class="d-flex justify-content-center text-center mt-2 pt-1" style="margin-bottom: 10px;">
+                <a href="#!" class="text-black"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#!" class="text-black"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                <a href="#!" class="text-black"><i class="fab fa-google fa-lg"></i></a>
               </div>
-  
-              <div>
-                <p style="color:black" class="mb-0">¿No tienes cuenta? <a href="#!"
-                    class="click-text fw-bold">Registrate</a></p>
-              </div>
-  
-   
+            </div>
           </div>
+ <br>
+ <br>
+ <br>
+          <div class="row omb_row-sm-offset-3">
+          </div>
+          <h3 style="text-align: center;"> ¿No tienes cuenta? <a href="registrarse"> Regístrate </a></h3>
         </div>
+
       </div>
     </div>
-    </div>
-  </section>
-</body>
+  </div>
+  </div>
+</section>
+
+

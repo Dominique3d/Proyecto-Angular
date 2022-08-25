@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('./index');
+const bcrypt = require("bcrypt");
 
 class Persona extends Model {}
 Persona.init({
@@ -19,7 +20,7 @@ Persona.init({
         type: DataTypes.STRING
       },
       contrasena: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       },
       telefono: {
         type: DataTypes.INTEGER
@@ -35,6 +36,14 @@ Persona.init({
       //   type: DataTypes.INTEGER
       // }
     }, {
+      instanceMethods: {
+        generateHash(contrasena) {
+            return bcrypt.hash(contrasena, bcrypt.genSaltSync(8));
+        },
+        validPassword(contrasena) {
+            return bcrypt.compare(contrasena, this.contrasena);
+        }
+      },
       sequelize,
       modelName: "persona",
       timestamps: false
