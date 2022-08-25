@@ -10,7 +10,7 @@ import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona
   styleUrls: ['./datos-estudiantes.component.css']
 })
 export class DatosEstudiantesComponent implements OnInit {
-  estudiantes: any[]=[];
+  estudiantes: Persona[]=[];
 
   constructor(
     public modalEditarPersonaService: ModalEditarPersonaService,

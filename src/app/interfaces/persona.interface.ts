@@ -1,3 +1,4 @@
+import { Clase } from "./clase.interface"
 export interface Persona {
     id: number;
     rut: string;
@@ -8,4 +9,5 @@ export interface Persona {
     contrasena: string;
     telefono: number;
     role: string;
+    instructorAsignadoId: number;
 }

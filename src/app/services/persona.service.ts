@@ -27,6 +27,14 @@ export class PersonaService {
   getAllInstructores(): Observable<any> {
     return this.http.get<any>(`${this.api_url}/getAllInstructores`);
   }
+  getPersonaById(id: number):Observable<any>{
+    return this.http.get<any>(`${this.api_url}/getPersonaById/${id}`)
+  }
+
+  getAllEstudiantesByIdInstructor(id: number): Observable<any>{
+    return this.http.get<any>(`${this.api_url}/getAllEstudiantesByIdInstructor/${id}`);
+  }
+
   // getEstudianteById(id: string): Observable<any> {
   //   return this.http.get<any>(`${this.api_url}/${id}`);
   // }
