@@ -43,3 +43,8 @@ sequelize.sync({ force: false }).then(() => {
     clases.forEach(clase => Clase.create(clase));
 });
 
+
+
+/*
+CREATE TABLE `didaktika`.`usuarios` ( `userId` INT NOT NULL , `userName` VARCHAR(255) NOT NULL , `userEmail` VARCHAR(255) NOT NULL , `userPassword` VARCHAR(255) NOT NULL , `userRol` INT NOT NULL , `userToken` VARCHAR(255) NOT NULL , PRIMARY KEY (`userId`)) ENGINE = InnoDB;
+*/

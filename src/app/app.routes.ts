@@ -26,8 +26,8 @@ const APP_ROUTES: Routes = [
 
     { path: 'curso-claseB', component: CursoClaseBComponent},
     { path: 'login', component: LoginComponent},
-    {path: 'registrarse', component: RegistrarseComponent},
-    {path: 'recuperarPassword', component: OlvidarPasswordComponent},
+    { path: 'registrarse', component: RegistrarseComponent},
+    { path: 'recuperarPassword', component: OlvidarPasswordComponent},
     { path: 'formulario', component: FormularioComponent},
     { path: 'contacto', component: ContactoComponent},
     { path: 'calendario', component: CalendarComponent},

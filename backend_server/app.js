@@ -1,16 +1,18 @@
-const express = require("express");
-const app = express();
-const cors = require('cors')
+var express = require("express");
+var cors = require('cors')
 
 const bodyParser = require('body-parser');
 const sequelize = require('./src/models/index');
 const WebpayPlus = require('transbank-sdk').WebpayPlus;
 const axios = require('axios');
-const mysql = require('mysql');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+var mysql = require('mysql');
+var bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 const persona = require('./src/models/persona');
 require('./src/models/relaciones');
+
+
+/*///////////////////////////////////////////////////////////////////////////
 
 //CORS Middleaware
  app.use(function (req, res, next) {
@@ -24,9 +26,6 @@ require('./src/models/relaciones');
 
 // const cors = require('cors');
 //app.use(cors({origin: 'http://localhost:8080'}));
-
-// CORS Middleware
-//app.use(cors());
 
 
 // set port, listen for requests
@@ -92,6 +91,9 @@ app.listen(PORT, () => {
     console.log('Se ha producido un error', error);
   })
 
+*///////////////////////////////////////////////////////////////////////////
+
+var app = express();
   // Datos BD
 const mc = mysql.createConnection({
   host: 'localhost',
@@ -102,12 +104,84 @@ const mc = mysql.createConnection({
 
 mc.connect();
 
+// CORS Middleware
+app.use(cors());
+
+// Para poder rellenar el req.body
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
+
+const db = require("./src/models");
+
+app.use('/api/clases', require('./src/controllers/clase-controlador'));
+app.use('/api/personas', require('./src/controllers/persona-controlador'));
+app.use('/api/planes', require('./src/controllers/plan-controlador'));
+
+
+// Escuchar peticiones
+app.listen(8080, () => {
+  console.log('Express Server - puerto 8080 online');
+});
+
+// Revisa los datos de autenticación, si son correctos entrega el token, si no entrega el error correspondiente
+
+// Agregar un nuevo producto
+// Crea usuario
+app.post('/usuario', function (req, res) {
+  console.log(req.body);
+  let datosUsuario = {
+      //userId: req.body.id,
+      userName: req.body.nombreUsuario,
+      userEmail: req.body.email,
+      userPassword: bcrypt.hashSync(req.body.contraseña, 10),
+      userRol: 0,
+      //userToken: req.body.userToken
+  };
+  if (mc) {
+      mc.query("INSERT INTO usuarios SET ?", datosUsuario, function (error, result) {
+          if (error) {
+              return res.status(400).json({
+                  ok: false, mensaje: 'Error al crear el usuario', errors: error
+              });
+          } else {
+              res.status(201).json({
+                  ok: true, usuario: result
+              });
+          }
+      });
+  }
+});
+
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//actualizar contraseña
+app.post('/recuperarPassword', function (req, res) {
+
+  let correo = req.body.email;
+  let password = bcrypt.hashSync(req.body.contraseña, 10);
+  console.log(req);
+  console.log(`UPDATE usuarios SET userPassword = "${password}" WHERE userEmail = "${correo}"`);
+
+  mc.query(`UPDATE usuarios SET userPassword = "${password}" WHERE userEmail = "${correo}"`,
+      function (error, result) {
+          if (error) {
+              return res.status(400).json({
+                  ok: false, mensaje: 'Error al actualizar la contraseña'
+              });
+          } else {
+              res.status(201).json({
+                  ok: true, olvidarPassword: result
+              });
+          }
+      });
+})
+
+
+
 // Revisa los datos de autenticación, si son correctos entrega el token, si no entrega el error correspondiente
 
 app.post('/login', (req, res) => {
   var body = req.body;
-  mc.query("SELECT * FROM personas WHERE email = ?", body.email, function (error, results, fields) {
-    
+  mc.query("SELECT * FROM usuarios WHERE userEmail = ?", body.email, function (error, results, fields) {
       if (error) {
           return res(500).json({
               ok: false,
@@ -123,57 +197,22 @@ app.post('/login', (req, res) => {
           });
       }
 
-      if (!bcrypt.compareSync(body.contrasena, results[0].contrasena)) {
-        return res.status(400).json({
-            ok: false, mensaje: "Credenciales incorrectas - password", errors: error
-        });
-    }
+      if (!bcrypt.compareSync(body.password, results[0].userPassword)) {
+          return res.status(400).json({
+              ok: false, mensaje: "Credenciales incorrectas - password", errors: error
+          });
+      }
 
       // Crea un token
       let SEED = 'esta-es-una-semilla';
-      let token = jwt.sign({ usuario: results[0].contrasena }, SEED, { expiresIn: 14400 })
+      let token = jwt.sign({ usuario: results[0].userPassword }, SEED, { expiresIn: 14400 })
       res.status(200).json({
           ok: true,
           usuario: results,
           id: results[0].userId,
           token: token
-    });
-    
-  });
-});
-
-// Agregar un nuevo producto
-// Crea usuario
-app.post('/usuario', function (req, res) {
-  console.log(req.body);
-  let datosUsuario = {
-      //id: req.body.id,
-      //rut: req.body.rut,
-      nombres: req.body.nombreUsuario,
-      //primerApellido: req.body.email,
-      //segundoApellido: req.body.email,
-      email: req.body.email,
-      contrasena: bcrypt.hashSync(req.body.contraseña, 10),
-      //telefono: req.body.email,
-      userRol: 0,
-      userToken: req.body.userToken
-  };
-  if (mc) {
-      mc.query("INSERT INTO personas SET ?", datosUsuario, function (error, result) {
-          if (error) {
-              return res.status(400).json({
-                  ok: false, mensaje: 'Error al crear el usuario', errors: error
-              });
-          } else {
-              res.status(201).json({
-                  ok: true, usuario: result
-              });
-          }
       });
-  }
-});
-
-
+  });
 });
 
 

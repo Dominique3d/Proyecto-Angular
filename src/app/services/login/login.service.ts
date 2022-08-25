@@ -17,8 +17,8 @@ export class LoginService {
     return this.http.post('http://localhost:8080/login', userLogin).pipe(map((res: any) => {
       console.log(res);
       localStorage.setItem('token', res.token);
-      localStorage.setItem('persona', JSON.stringify(res.persona));
-      localStorage.setItem('rol', res.persona[0].userRol);
+      localStorage.setItem('usuario', JSON.stringify(res.usuario));
+      localStorage.setItem('rol', res.usuario[0].userRol);
       this.logueado = true;
       this.router.navigate(['home']);
     }));
@@ -30,7 +30,7 @@ export class LoginService {
 
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('persona');
+    localStorage.removeItem('usuario');
     localStorage.removeItem('rol');
     this.logueado = false;
     this.router.navigate(['home']);
@@ -38,7 +38,7 @@ export class LoginService {
 
 
   registrarse(usuario: Usuario){
-    return this.http.post('http://localhost:8080/persona', usuario).pipe(map((res: any) => {
+    return this.http.post('http://localhost:8080/usuario', usuario).pipe(map((res: any) => {
       console.log(res);
      
     }));
