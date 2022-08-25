@@ -40,6 +40,8 @@ import { PerfilInstructorComponent } from './perfiles/instructor/perfil-instruct
 import { MatriculasComponent } from './matriculas/matriculas.component';
 import { MisCursosComponent } from './perfiles/alumno/mis-cursos/mis-cursos.component';
 import { ModalAgendaComponent } from './services/modal-agenda/modal-agenda.component';
+import { RegistrarseComponent } from './components/login/registrarse/registrarse.component';
+import { OlvidarPasswordComponent } from './components/login/olvidar-password/olvidar-password.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -77,7 +79,9 @@ const routes: Routes = [
       MatriculasComponent,
       MisCursosComponent,
       ModalEditarPersonaComponent,
-      ModalAgendaComponent
+      ModalAgendaComponent,
+      RegistrarseComponent,
+      OlvidarPasswordComponent
    ],
   imports: [
 

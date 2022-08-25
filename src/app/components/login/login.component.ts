@@ -1,41 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from '../../services/login/login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  title = 'form-reactive';
-  formInscripcion: FormGroup = this.buildForm();
-  hide = true;
-  constructor(private formBuilder: FormBuilder) {
+
+  formLogin: FormGroup;
+
+  constructor(private loginService: LoginService, private formBuilder: FormBuilder, private router : Router) { 
+    this.formLogin = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    })
   }
 
-  private buildForm(){
-    return this.formInscripcion = this.formBuilder.group({
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(5)]],
-    });
-  }
-  public register:Register={
-    email:"",
-    password:"",
-  };
-  onRegister( $event: Event){
-    $event.preventDefault();
-    console.log(this.formInscripcion.get('email'))
-    if(this.formInscripcion.valid){
-      console.log(this.formInscripcion.value);
-      this.register=this.formInscripcion.value;
-    }
-  }
   ngOnInit(): void {
   }
 
+  login() {
+    this.loginService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe((res: any) => {
+      console.log(res);
+    });
+
+  }
+
 }
+/*
 export interface Register {
   email:string;
   password:string;
 }
+*/

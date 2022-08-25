@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
         primerApellido: req.body.primerApellido,
         segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contrasena: req.body.contraseña,
+        contrasena: bcrypt.hashSync(req.body.contraseña, 8),
         telefono: req.body.telefono,
         role: req.body.role
     }).then(persona => {
@@ -85,7 +85,7 @@ router.post('/update/:id', (req, res) => {
         primerApellido: req.body.primerApellido,
         segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contrasena: req.body.contraseña,
+        contrasena: bcrypt.hashSync(req.body.contraseña, 8),
         telefono: req.body.telefono,
         role: req.body.role
     }, {
@@ -96,5 +96,7 @@ router.post('/update/:id', (req, res) => {
         res.json(result);
     });
 });
+
+
 
 module.exports = router;

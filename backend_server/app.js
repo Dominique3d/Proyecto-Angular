@@ -6,20 +6,27 @@ const bodyParser = require('body-parser');
 const sequelize = require('./src/models/index');
 const WebpayPlus = require('transbank-sdk').WebpayPlus;
 const axios = require('axios');
+const mysql = require('mysql');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const persona = require('./src/models/persona');
 require('./src/models/relaciones');
 
 //CORS Middleaware
-// app.use(function (req, res, next) {
-//   //Enabling CORS
-//   res.setHeader('Access-Control-Allow-Origin', "*");
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-//   res.header('Access-Control-Allow-Headers',
-//   'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization');
-//   next();
-// });
+ app.use(function (req, res, next) {
+   //Enabling CORS
+   res.setHeader('Access-Control-Allow-Origin', "*");
+   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+   res.header('Access-Control-Allow-Headers',
+   'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization');
+   next();
+ });
 
 // const cors = require('cors');
-app.use(cors({origin: 'http://localhost:8080'}));
+//app.use(cors({origin: 'http://localhost:8080'}));
+
+// CORS Middleware
+//app.use(cors());
 
 
 // set port, listen for requests
@@ -84,6 +91,88 @@ app.listen(PORT, () => {
   }).catch(error => {
     console.log('Se ha producido un error', error);
   })
+
+  // Datos BD
+const mc = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'didaktika'
+});
+
+mc.connect();
+
+// Revisa los datos de autenticación, si son correctos entrega el token, si no entrega el error correspondiente
+
+app.post('/login', (req, res) => {
+  var body = req.body;
+  mc.query("SELECT * FROM personas WHERE email = ?", body.email, function (error, results, fields) {
+    
+      if (error) {
+          return res(500).json({
+              ok: false,
+              mensaje: "Error al buscar usuario",
+              errors: error
+          });
+      }
+      if (!results.length) {
+          return res.status(400).json({
+              ok: false,
+              mensaje: 'Credenciales incorrectas - email',
+              errors: error
+          });
+      }
+
+      if (!bcrypt.compareSync(body.contrasena, results[0].contrasena)) {
+        return res.status(400).json({
+            ok: false, mensaje: "Credenciales incorrectas - password", errors: error
+        });
+    }
+
+      // Crea un token
+      let SEED = 'esta-es-una-semilla';
+      let token = jwt.sign({ usuario: results[0].contrasena }, SEED, { expiresIn: 14400 })
+      res.status(200).json({
+          ok: true,
+          usuario: results,
+          id: results[0].userId,
+          token: token
+    });
+    
+  });
+});
+
+// Agregar un nuevo producto
+// Crea usuario
+app.post('/usuario', function (req, res) {
+  console.log(req.body);
+  let datosUsuario = {
+      //id: req.body.id,
+      //rut: req.body.rut,
+      nombres: req.body.nombreUsuario,
+      //primerApellido: req.body.email,
+      //segundoApellido: req.body.email,
+      email: req.body.email,
+      contrasena: bcrypt.hashSync(req.body.contraseña, 10),
+      //telefono: req.body.email,
+      userRol: 0,
+      userToken: req.body.userToken
+  };
+  if (mc) {
+      mc.query("INSERT INTO personas SET ?", datosUsuario, function (error, result) {
+          if (error) {
+              return res.status(400).json({
+                  ok: false, mensaje: 'Error al crear el usuario', errors: error
+              });
+          } else {
+              res.status(201).json({
+                  ok: true, usuario: result
+              });
+          }
+      });
+  }
+});
+
 
 });
 
