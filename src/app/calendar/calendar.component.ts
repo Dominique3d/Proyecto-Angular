@@ -26,8 +26,12 @@ export class CalendarComponent implements OnInit {
       today: 'Hoy'
     },
 
-    weekends: false
-    ,
+    weekends: false,
+    selectable: true,
+    validRange: function(nowDate) {
+      return {start: nowDate}
+    },
+    
     views: {
       dayGridMonth: { // name of view
         titleFormat: { year: 'numeric', month: 'long' }
@@ -50,16 +54,7 @@ export class CalendarComponent implements OnInit {
 
   }
 
-  toggleWeekends() {
-    //this.calendarOptions.weekends = !this.calendarOptions.weekends // toggle the boolean!
-  }
-  
 
 
-}
-
-
-function arg(arg: any, any: any) {
-  throw new Error('Function not implemented.');
 }
 
