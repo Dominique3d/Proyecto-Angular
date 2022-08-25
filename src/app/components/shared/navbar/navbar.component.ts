@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+
   @HostListener('window:scroll', []) onWindowScroll(){
     let navbar = document.getElementById("contenido");
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
