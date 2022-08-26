@@ -40,6 +40,10 @@ export class PersonaService {
     return this.http.get<any>(`${this.api_url}/getDatosUsuario/${localStorage.getItem('email')}`);
   }
 
+  updatePersona(id: number, persona: Persona){
+    return this.http.put(`${this.api_url}/update/${id}`, persona);
+  }
+
   // getEstudianteById(id: string): Observable<any> {
   //   return this.http.get<any>(`${this.api_url}/${id}`);
   // }

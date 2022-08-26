@@ -27,49 +27,49 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Primer apellido</label>
                         <div class="col-8">
-                            <input type="text" formControlName="primerApellido" class="form-control" placeholder="Primer apellido">
+                            <input type="text" formControlName="primerApellido" class="form-control" [placeholder]="personaSelect?.primerApellido ? personaSelect?.primerApellido : 'Primer apellido'">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Segundo apellido</label>
                         <div class="col-8">
-                            <input type="text" formControlName="segundoApellido" class="form-control" placeholder="Segundo apellido">
+                            <input type="text" formControlName="segundoApellido" class="form-control" [placeholder]="personaSelect?.segundoApellido ? personaSelect?.segundoApellido : 'Segundo apellido'">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Correo electrónico</label>
                         <div class="col-8">
-                            <input type="text" formControlName="email" class="form-control" placeholder="Correo electrónico">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <label class="col-2 col-form-label">Contraseña</label>
-                        <div class="col-8">
-                            <input type="text" formControlName="contrasena" class="form-control" placeholder="Contraseña">
+                            <input type="text" formControlName="email" class="form-control" [placeholder]="personaSelect?.email ? personaSelect?.email : 'Correo electrónico'">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Teléfono</label>
                         <div class="col-8">
-                            <input type="number" formControlName="telefono" class="form-control" placeholder="Teléfono">
+                            <input type="number" formControlName="telefono" class="form-control" [placeholder]="personaSelect?.telefono ? personaSelect?.telefono : 'Teléfono'">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Rol</label>
                         <div class="col-8">
-                            <input type="number" formControlName="role" class="form-control" placeholder="Rol">
+                            <input type="number" formControlName="role" class="form-control" [placeholder]="personaSelect?.role ? personaSelect?.role : 'Rol'">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">ID de Instructor asignado</label>
+                        <div class="col-8">
+                            <input type="number" formControlName="instructorAsignadoId" class="form-control" [placeholder]="personaSelect?.instructorAsignadoId ? personaSelect?.instructorAsignadoId : 'ID de instructor asignado'">
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button (click)="saveData()" type="submit" class="btn btn-primary">Guardar</button>
                     <button (click)="ocultarModal()" type="button" class="btn btn-danger">Cerrar</button>
                 </div>
             </form>
