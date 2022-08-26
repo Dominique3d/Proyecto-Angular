@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
 
   @HostListener('window:scroll', []) onWindowScroll(){
     let navbar = document.getElementById("contenido");
@@ -16,9 +18,19 @@ export class NavbarComponent implements OnInit {
     }
   } // for window scroll events
 
-  constructor() { }
+  rol : string = "";
+
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('rol') != null) {
+      this.rol = localStorage.getItem('rol')!;
+    }
   }
 
+  cerrarSesion() {
+    console.log("cerrar sesion 1")
+    this.loginService.logout();
+    console.log("cerrar sesion 2")
+  }
 }

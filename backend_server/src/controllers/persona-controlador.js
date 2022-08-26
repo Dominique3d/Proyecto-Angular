@@ -6,19 +6,8 @@ const Plan = require('../models/plan');
 
 
 // mostrar todas las personas
-router.get('/getAllPersonas', (req, res) => {
-    Persona.findAll({
-        include: [{
-            model: Clase,
-            as: "clases",
-            attributes: ['tipo']
-        }, {
-            model: Plan,
-            as: "plans",
-            attributes: ['nombre'],
-        }],
-        attributes: ['nombres', 'primerApellido', 'segundoApellido']
-    }).then(personas => res.json(personas));
+router.get('/', (req, res) => {
+    Persona.findAll().then(personas => res.json(personas));
 });
 
 // CREATE /api/personas
@@ -29,9 +18,10 @@ router.post('/', (req, res) => {
         primerApellido: req.body.primerApellido,
         segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contrasena: req.body.contraseña,
+        contrasena: bcrypt.hashSync(req.body.contraseña, 8),
         telefono: req.body.telefono,
-        role: req.body.role
+        role: req.body.role,
+        instructorAsignadoId: req.body.instructorAsignadoId
     }).then(persona => {
         res.json(persona);
     }).catch(err => {
@@ -42,17 +32,7 @@ router.post('/', (req, res) => {
 // mostrar todos los estudiantes
 router.get('/getAllEstudiantes', (req, res) => {
     Persona.findAll({
-        include: [{
-            model: Clase,
-            as: "clases",
-            attributes: ['tipo']
-        }, {
-            model: Plan,
-            as: "plans",
-            attributes: ['nombre'],
-        }],
-        attributes: ['rut', 'nombres', 'primerApellido', 'segundoApellido', 'email', 'contrasena', 'telefono', 'role'],
-            where: {
+        where: {
             role: 0
         }
     }).then(personas => res.json(personas));
@@ -61,17 +41,7 @@ router.get('/getAllEstudiantes', (req, res) => {
 // mostrar todos los instructores
 router.get('/getAllInstructores', (req, res) => {
     Persona.findAll({
-        include: [{
-            model: Clase,
-            as: "clases",
-            attributes: ['tipo']
-        }, {
-            model: Plan,
-            as: "plans",
-            attributes: ['nombre'],
-        }],
-        attributes: ['rut', 'nombres', 'primerApellido', 'segundoApellido', 'email', 'contrasena', 'telefono', 'role'],
-            where: {
+        where: {
             role: 1
         }
     }).then(personas => res.json(personas));
@@ -85,9 +55,10 @@ router.post('/update/:id', (req, res) => {
         primerApellido: req.body.primerApellido,
         segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contrasena: req.body.contraseña,
+        contrasena: bcrypt.hashSync(req.body.contraseña, 8),
         telefono: req.body.telefono,
-        role: req.body.role
+        role: req.body.role,
+        instructorAsignadoId: req.body.instructorAsignadoId
     }, {
         where: {
             id: req.params.id
@@ -95,6 +66,21 @@ router.post('/update/:id', (req, res) => {
     }).then(result => {
         res.json(result);
     });
+});
+
+//Get persona por ID
+router.get('/getPersonaById/:id', (req, res) => {
+    Persona.findByPk(req.params.id).then(personas => res.json(personas));
+});
+
+//Get todos los Estudiantes de un Instructor
+router.get('/getAllEstudiantesByIdInstructor/:id', (req, res) => {
+    Persona.findAll({
+        where: {
+            role: 0,
+            instructorAsignadoId: req.params.id
+        }
+    }).then(personas => res.json(personas));
 });
 
 module.exports = router;
