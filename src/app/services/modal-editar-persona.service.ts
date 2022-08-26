@@ -18,7 +18,8 @@ export class ModalEditarPersonaService {
 
   mostrarModal(persona: Persona){
     this.personaSelect = persona;
+    
     this.oculto = 'block';
-    console.log('Mostrar modal editar persona ' + this.personaSelect.nombres);
+    console.log('Mostrar modal editar persona MODAL EDITAR PERSONA SERVICE ' + this.personaSelect.nombres);
   }
 }
