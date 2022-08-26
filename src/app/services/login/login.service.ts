@@ -46,7 +46,7 @@ export class LoginService {
   registrarse(usuario: Usuario){
     return this.http.post('http://localhost:8080/usuario', usuario).pipe(map((res: any) => {
       console.log(res);
-     
+
     }));
   }
   recuperarPassword(usuario: Usuario){
