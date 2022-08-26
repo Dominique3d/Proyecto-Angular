@@ -27,8 +27,13 @@ const personas = [
 //$2b$10$lJjwrwnV9cwohBMh5ILgq.KVTc.QOHRaV1kRgDI4AlxwJci7xXLoq
 
 const usuarios = [
-    {userName: "Admin" ,userEmail: "admin@gmail.com", userPassword: "$2b$10$lJjwrwnV9cwohBMh5ILgq.KVTc.QOHRaV1kRgDI4AlxwJci7xXLoq", userRol: "recepcion"}
+    {userName: "Admin" ,userEmail: "admin@gmail.com", userPassword: "$2b$10$lJjwrwnV9cwohBMh5ILgq.KVTc.QOHRaV1kRgDI4AlxwJci7xXLoq", userRol: "recepcion"},
     //admin
+
+
+    {userName: "Pablo" ,userEmail: "pablo@gmail.com", userPassword: "$2b$10$ZNST2R2muICwiby4HTqVfOlyPev1wu41R07Qpk9lzWYI0589f9yJy", userRol: "instructor"},
+    {userName: "Dominique" ,userEmail: "dominique@gmail.com", userPassword: "$2b$10$rg/ye8Lsh.djXxOKA8QtDOj10KdWjI/SlcmAnuXpdSWMyoa6E5.Ri", userRol: "instructor"},
+    {userName: "Juan" ,userEmail: "juan@agmail.com", userPassword: "$2b$10$Gl/tuNMh74XsW.hl0/fA..8XZ14klTKBPlaHW5Sb8.LFEZ2TxfgYi", userRol: "instructor"}
  ];
 
 const planes = [

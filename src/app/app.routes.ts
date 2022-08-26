@@ -36,7 +36,7 @@ const APP_ROUTES: Routes = [
     { path: 'instructor', component: InstructorComponent},
     { path: 'recepcion', component: RecepcionComponent, canActivate: [LoginGuard]},
     { path: 'solicitudes', component: SolicitudesComponent},
-    { path: 'datos-estudiantes', component: DatosEstudiantesComponent},
+    { path: 'datos-estudiantes', component: DatosEstudiantesComponent, canActivate: [LoginGuard]},
     { path: 'datos-instructores', component: DatosInstructoresComponent, canActivate: [LoginGuard]},
     { path: 'perfil-instructor' , component: PerfilInstructorComponent, canActivate: [LoginGuard]},
     { path: 'perfil-alumno' , component: PerfilAlumnoComponent},
