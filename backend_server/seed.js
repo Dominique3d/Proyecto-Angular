@@ -2,6 +2,7 @@ const sequelize = require('./src/models/index');
 const Persona = require('./src/models/persona');
 const Clase = require('./src/models/clase');
 const Plan = require('./src/models/plan');
+const Usuario = require('./src/models/usuario');
 require('./src/models/relaciones');
 
 // Personas
@@ -22,6 +23,13 @@ const personas = [
     { rut:197970727, nombres: "Rodrigo", primerApellido: "Macher", segundoApellido: "Chávez", email: "rodr@gmail.com", contrasena: 1234567, telefono: 992168273, role: 0, instructorAsignadoId: 4}
 ];
 // >>>>>>> 3a1b0e622482a2973ab0b2539664b437bb00ac1e
+
+//$2b$10$lJjwrwnV9cwohBMh5ILgq.KVTc.QOHRaV1kRgDI4AlxwJci7xXLoq
+
+const usuarios = [
+    {userName: "Admin" ,userEmail: "admin@gmail.com", userPassword: "$2b$10$lJjwrwnV9cwohBMh5ILgq.KVTc.QOHRaV1kRgDI4AlxwJci7xXLoq", userRol: "recepcion"}
+    //admin
+ ];
 
 const planes = [
     { precio: 150000, nombre: "PLAN ESTANDAR", n_clases_practicas: 12, n_clases_teoricas: 8 },
@@ -57,6 +65,8 @@ sequelize.sync({ force: false }).then(() => {
     planes.forEach(plan => Plan.create(plan));
 
     clases.forEach(clase => Clase.create(clase));
+
+    usuarios.forEach(usuarios => Usuario.create(usuarios));
 });
 
 
