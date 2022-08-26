@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { CalendarOptions }from '@fullcalendar/core';  // useful for typechecking
+import { now } from 'jquery';
 import { ModalAgendaService } from '../services/modal-agenda.service';
 
 
@@ -31,7 +32,7 @@ export class CalendarComponent implements OnInit {
     validRange: function(nowDate) {
       return {start: nowDate}
     },
-    
+
     views: {
       dayGridMonth: { // name of view
         titleFormat: { year: 'numeric', month: 'long' }
@@ -40,7 +41,7 @@ export class CalendarComponent implements OnInit {
     },
 
     dateClick: this.handleDateClick.bind(this), // bind is important!
-    
+
 
   };
 
