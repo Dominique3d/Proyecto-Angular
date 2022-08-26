@@ -8,26 +8,38 @@
 <div id="formulario">
   <div id="fondoFormulario"></div>
   <div id="cuerpoFormulario">
-    
+
     <p id="tituloPrincipalFormulario">FORMULARIO DE PAGO</p>
-    <p class="titulosFormulario">NOMBRE DEL PLAN - PRECIO DEL PLAN</p>
     <!-- <p>{{nombrePlan}} - {{precioPlan}}</p> -->
     <form [formGroup]="pagoForm" (ngSubmit)="onSubmit()">
-      <p class="titulosFormulario">Nombres</p>
-      <input type="text" formControlName="nombres" id="inputNombres" class="inputsFormulario">
-      <p class="titulosFormulario">Apellidos</p>
-      <input type="text" formControlName="apellidos" id="inputApellidos" class="inputsFormulario">
+      <p class="titulosFormulario">Nombre del Plan</p>
+      <select name="genero" type="text" formControlName="planes" id="inputNombres" class="inputsFormulario" class="form-control">
+        <option>Seleccione su plan </option>
+        <option>Plan Estándar 150.000</option>
+        <option>Plan Full 180.000</option>
+        <option>Plan Premium 200.000</option>
+        <option>Plan Re-entrenamiento (4 clases) 55.000</option>
+        <option>Plan Re-entrenamiento (6 clases) 75.000</option>
+        <option>Plan Re-entrenamiento (8 clases) 90.000</option>
+        <option>Plan Teórico 30.000</option>
+        <option>Sesión psicosensométrico 8.000</option>
+      </select>
+
+      <p class="titulosFormulario">Nombre</p>
+      <input type="text" formControlName="nombres" id="inputNombres" class="inputsFormulario" type="text" class="form-control" required >
+      <p class="titulosFormulario">Primer Apellido</p>
+      <input type="text" formControlName="apellidos" id="inputApellidos" class="inputsFormulario" class="form-control">
+      <p class="titulosFormulario">Segundo Apellido</p>
+      <input type="text" formControlName="direccion" id="inputDireccion" class="inputsFormulario" class="form-control">
       <p class="titulosFormulario">RUT</p>
-      <input type="text" formControlName="rut" id="inputRut" class="inputsFormulario">
-      <p class="titulosFormulario">Dirección</p>
-      <input type="text" formControlName="direccion" id="inputDireccion" class="inputsFormulario">
+      <input type="text" formControlName="rut" id="inputRut" class="inputsFormulario" class="form-control">
       <p class="titulosFormulario">Teléfono</p>
-      <input type="text" formControlName="telefono" id="inputTelefono" class="inputsFormulario">
+      <input type="text" formControlName="telefono" id="inputTelefono" class="inputsFormulario" class="form-control">
       <p class="titulosFormulario">Correo electrónico</p>
-      <input type="text" formControlName="email" id="inputEmail" class="inputsFormulario">
+      <input type="text" formControlName="email" id="inputEmail" class="inputsFormulario" class="form-control">
       <br>
       <div class="botonesFormulario">
-        <button class="btn">Atrás</button>
+        <button onclick="location.href='/curso-claseB'" class="btn" >Atrás</button>
         <button class="btn" type="submit">Enviar</button>
       </div>
     </form>

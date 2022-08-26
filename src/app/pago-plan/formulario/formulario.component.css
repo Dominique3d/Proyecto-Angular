@@ -41,7 +41,7 @@ body{
 }
 
 .botonesFormulario{
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-around;
 }

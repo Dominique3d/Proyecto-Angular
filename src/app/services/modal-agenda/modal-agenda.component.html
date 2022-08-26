@@ -1,11 +1,12 @@
-<div class="modal" [ngStyle]="{'display': modalAgendaService.oculto}" tabindex="-1" role="dialog">
+<div class="modal" [ngStyle]="{'display': modalAgendaService.oculto}" tabindex="-1" role="dialog" >
     <div class="modal-dialog">
         <div class="modal-content">
             <form [formGroup]="formAgenda" (ngSubmit)="saveData()" novalidate>
                 <!-- Modal header -->
                 <div class="modal-header">
                     <h2 class="modal-tittle">Horarios disponibles</h2>
-                    <button (click)="ocultarModal()" type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button (click)="ocultarModal()" type="button" style="border-radius: 4px;" class="close"
+                    class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                 </div>
 
                 <!-- Modal body -->
@@ -14,129 +15,147 @@
                         {{horas[i]}} - {{horas[i+1]}}
                         <div class="col-4" style="color: green;">
                             DISPONIBLE
-                        </div> 
+                        </div>
                         <div class="col-4">
-                            <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                        
-                        
+                            <button  type="button" id="bmodal" data-bs-toggle="modal" data-bs-target="#exampleModal" >Reservar</button>
+
+                        </div>
+
                     </div>
-                    
+
+               <!-- Modal -->
+<div class="modal fade" id="exampleModal"  style="margin-top: 150px;" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Confirmar Reserva</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1> ¿Está seguro/a que desea reservar este horario de clases? </h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Confirmar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
                         <!-- <br> -->
-                      
+
                     <!-- <div class="form-group row">
-                        10:00-11:00 
+                        10:00-11:00
                         <div class="col-4" style="color: red;">
                             RESERVADO
-                        
-                        </div> 
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                        
+
+                        </div>
+
                     </div>
-         
+
                         <br>
-                      
+
                     <div class="form-group row">
-                        11:00-12:00 
+                        11:00-12:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                      
+
+                        </div>
+
                     </div>
-              
+
                         <br>
-                      
+
                     <div class="form-group row">
-                        12:00-13:00 
+                        12:00-13:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                        
+
+                        </div>
+
                     </div>
                     <br>
-                   
+
                     <div class="form-group row">
-                        13:00-14:00 
+                        13:00-14:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                        
+
+                        </div>
+
                     </div>
                     <br>
-                
+
                     <div class="form-group row">
-                        14:00-15:00 
+                        14:00-15:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                      
+
+                        </div>
+
                     </div>
                     <br>
-           
+
                     <div class="form-group row">
                         15:00-16:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div> 
-                     
+
+                        </div>
+
                     </div>
                     <br>
-                  
+
                     <div class="form-group row">
                         16:00-17:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div>  
-                        
+
+                        </div>
+
                     </div>
-                  
+
                     <br>
                     <div class="form-group row">
                         17:00-18:00
                         <div class="col-4">
-                            
-                        
-                        </div> 
+
+
+                        </div>
                         <div class="col-4">
                             <button id="bmodal">Reservar</button>
-                        
-                        </div>  
-                        
-                        
+
+                        </div>
+
+
                     </div>
                      -->
                 </div>

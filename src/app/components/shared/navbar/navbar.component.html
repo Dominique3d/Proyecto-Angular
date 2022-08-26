@@ -28,7 +28,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mb-2 mb-lg-0" >
-                <div>   <a  style="margin-left: 25px;" href="#" [routerLink]="['home']"  class="nav-item nav-link active nav-font"> 
+                <div>   <a  style="margin-left: 25px;" href="#" [routerLink]="['home']"  class="nav-item nav-link active nav-font">
                     <strong>INICIO</strong>
                 </a> </div>
                 <a  style="margin-left: 25px;"href="#" [routerLink]="['curso-claseB']" class="nav-item nav-link active nav-font">
@@ -46,14 +46,14 @@
                 <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['instructor']"class="nav-item nav-link active nav-font">
                     <strong>PERFIL INSTRUCTOR</strong>
                 </a> </div>
-                <div *ngIf = "rol =='' || rol== null "> <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font"> 
+                <div *ngIf = "rol =='' || rol== null "> <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">
                     <strong>INICIAR SESIÓN</strong>
                 </a></div>
                 <!-- <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">
                     <strong style="background-color: red; padding: 10px">CERRAR SESIÓN</strong>
                 </a> -->
                 <div *ngIf = "rol != '' || rol == null">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="cerrarSesion()">  CERRAR SESIÓN </button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="cerrarSesion()">  CERRAR SESIÓN </button>
                 </div>
             </div>
         </div>
