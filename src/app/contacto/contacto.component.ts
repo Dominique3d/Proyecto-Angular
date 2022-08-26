@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
+  rol : string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('rol') != null) {
+      this.rol = localStorage.getItem('rol')!;
+    }
   }
 
 }

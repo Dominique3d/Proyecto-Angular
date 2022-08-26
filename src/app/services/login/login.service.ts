@@ -20,7 +20,10 @@ export class LoginService {
       localStorage.setItem('usuario', JSON.stringify(res.usuario));
       localStorage.setItem('rol', res.usuario[0].userRol);
       this.logueado = true;
-      this.router.navigate(['home']);
+      this.router.navigate(['home'])
+      .then(() => {
+        window.location.reload();
+      });
     }));
   }
 
@@ -33,6 +36,7 @@ export class LoginService {
     localStorage.removeItem('usuario');
     localStorage.removeItem('rol');
     this.logueado = false;
+    window.location.reload();
     this.router.navigate(['home']);
   }
 

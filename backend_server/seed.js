@@ -46,5 +46,5 @@ sequelize.sync({ force: false }).then(() => {
 
 
 /*
-CREATE TABLE `didaktika`.`usuarios` ( `userId` INT NOT NULL , `userName` VARCHAR(255) NOT NULL , `userEmail` VARCHAR(255) NOT NULL , `userPassword` VARCHAR(255) NOT NULL , `userRol` INT NOT NULL , `userToken` VARCHAR(255) NOT NULL , PRIMARY KEY (`userId`)) ENGINE = InnoDB;
+CREATE TABLE `didaktika`.`usuarios` ( `userId` INT NOT NULL , `userName` VARCHAR(255) NOT NULL , `userEmail` VARCHAR(255) NOT NULL , `userPassword` VARCHAR(255) NOT NULL , `userRol` VARCHAR(255) NOT NULL , `userToken` VARCHAR(255) NOT NULL , PRIMARY KEY (`userId`)) ENGINE = InnoDB;
 */

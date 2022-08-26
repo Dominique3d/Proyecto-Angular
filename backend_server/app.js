@@ -123,6 +123,14 @@ app.listen(8080, () => {
   console.log('Express Server - puerto 8080 online');
 });
 
+// Conectase a la base de datos
+  // Force true: DROP TABLES
+  sequelize.sync({ force: false }).then(() => {
+    console.log("Nos hemos conectado a la base de datos");
+  }).catch(error => {
+    console.log('Se ha producido un error', error);
+  })
+
 // Revisa los datos de autenticación, si son correctos entrega el token, si no entrega el error correspondiente
 
 // Agregar un nuevo producto
@@ -134,7 +142,7 @@ app.post('/usuario', function (req, res) {
       userName: req.body.nombreUsuario,
       userEmail: req.body.email,
       userPassword: bcrypt.hashSync(req.body.contraseña, 10),
-      userRol: 0,
+      userRol: "estudiante",
       //userToken: req.body.userToken
   };
   if (mc) {

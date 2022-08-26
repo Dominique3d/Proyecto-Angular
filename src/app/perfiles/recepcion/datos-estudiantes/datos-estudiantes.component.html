@@ -11,7 +11,7 @@
           margin: auto;
         ">
         <div class="recordatorio" style="border-radius: 20px; margin-left: 18px;">
-          <div class="table-responsive">
+          <div *ngIf ="rol == 'estudiante'" class="table-responsive">
             <table class="table">
               <thead>
                 <tr>
@@ -35,7 +35,7 @@
                     margin-left: auto;
                     margin-right: auto;
                     height: 40px;
-                  " (click)="abrirModal(estudiante)">Editar</button> </td>
+                  "(click)="abrirModal(estudiante)">Editar</button> </td>
                   <td style="text-align: center;"> <i class="fa-solid fa-calendar-days fa-2x"></i> </td>
                 </tr>
               </tbody>
