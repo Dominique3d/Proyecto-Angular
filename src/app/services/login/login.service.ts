@@ -18,6 +18,7 @@ export class LoginService {
       console.log(res);
       localStorage.setItem('token', res.token);
       localStorage.setItem('usuario', JSON.stringify(res.usuario));
+      localStorage.setItem('email', email);
       localStorage.setItem('rol', res.usuario[0].userRol);
       this.logueado = true;
       this.router.navigate(['home'])
@@ -34,6 +35,7 @@ export class LoginService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('usuario');
+    localStorage.removeItem('email');
     localStorage.removeItem('rol');
     this.logueado = false;
     window.location.reload();

@@ -197,6 +197,7 @@ app.post('/login', (req, res) => {
       res.status(200).json({
           ok: true,
           usuario: results,
+          email: body.email,
           id: results[0].id,
           token: token
       });
@@ -214,7 +215,7 @@ app.post("/api/token", (request, response) => {
     "buy_order": "ordenCompra12345678",
     "session_id": "sesion1234557545",
     "amount": 150000,
-    "return_url": "http://localhost:3030/api/redirect",
+    "return_url": "http://localhost:4200/home",
   }
   try {
       axios.post(url, datosDeCompra, {headers: headers})
