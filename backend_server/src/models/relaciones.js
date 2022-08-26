@@ -1,8 +1,15 @@
 const Clase = require('./clase');
 const Persona = require('./persona');
 const Plan = require('./plan');
+const Usuario = require('./usuario');
 
-//NaN
+// 1a1
+// Usuario tiene una direccion
+// añadir una clave foranea userId a la tabla addresses
+Persona.hasOne(Usuario, { as: "usuario", foreignKey: "persona_id" });
+
+// Añade una clave userId a la tabla addresses
+Usuario.belongsTo(Persona, { as: "persona", foreignKey: "persona_id" });
 
 
 //NaN

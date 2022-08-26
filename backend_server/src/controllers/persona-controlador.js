@@ -3,6 +3,7 @@ const router = express.Router();
 const Persona = require('../models/persona');
 const Clase = require('../models/clase');
 const Plan = require('../models/plan');
+const Usuario = require('../models/usuario');
 
 
 // mostrar todas las personas
