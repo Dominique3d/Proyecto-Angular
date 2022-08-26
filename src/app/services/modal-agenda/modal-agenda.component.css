@@ -1,0 +1,21 @@
+.modal-body{
+    font-size:larger;
+  
+}
+.col-4{
+    margin-left: 22px;
+    text-align: center;
+    padding-left: 50px;
+}
+#bmodal{
+ 
+    background-color: rgb(103, 230, 103);
+    border-color: transparent;
+    color: black;
+    font-size:medium;
+    font-weight:400;
+    border-radius: 5px;
+    border-width: 1px;
+    height: 30px;
+    width: 80px;
+}

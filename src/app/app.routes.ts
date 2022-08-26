@@ -15,6 +15,9 @@ import { PerfilInstructorComponent } from "./perfiles/instructor/perfil-instruct
 import { SolicitudesComponent } from "./perfiles/recepcion/solicitudes/solicitudes.component";
 import { MatriculasComponent } from "./matriculas/matriculas.component";
 import { MisCursosComponent } from "./perfiles/alumno/mis-cursos/mis-cursos.component";
+import { RegistrarseComponent } from './components/login/registrarse/registrarse.component';
+import { OlvidarPasswordComponent } from './components/login/olvidar-password/olvidar-password.component';
+import { LoginGuard } from './components/login/login.guard';
 
 
 const APP_ROUTES: Routes = [
@@ -24,16 +27,18 @@ const APP_ROUTES: Routes = [
 
     { path: 'curso-claseB', component: CursoClaseBComponent},
     { path: 'login', component: LoginComponent},
+    { path: 'registrarse', component: RegistrarseComponent},
+    { path: 'recuperarPassword', component: OlvidarPasswordComponent},
     { path: 'formulario', component: FormularioComponent},
     { path: 'contacto', component: ContactoComponent},
     { path: 'calendario', component: CalendarComponent},
     { path: 'alumno', component: AlumnoComponent},
     { path: 'instructor', component: InstructorComponent},
-    { path: 'recepcion', component: RecepcionComponent},
+    { path: 'recepcion', component: RecepcionComponent, canActivate: [LoginGuard]},
     { path: 'solicitudes', component: SolicitudesComponent},
     { path: 'datos-estudiantes', component: DatosEstudiantesComponent},
-    { path: 'datos-instructores', component: DatosInstructoresComponent},
-    { path: 'perfil-instructor' , component: PerfilInstructorComponent},
+    { path: 'datos-instructores', component: DatosInstructoresComponent, canActivate: [LoginGuard]},
+    { path: 'perfil-instructor' , component: PerfilInstructorComponent, canActivate: [LoginGuard]},
     { path: 'perfil-alumno' , component: PerfilAlumnoComponent},
     { path: 'matriculas', component: MatriculasComponent},
     { path: 'mis-cursos', component: MisCursosComponent},

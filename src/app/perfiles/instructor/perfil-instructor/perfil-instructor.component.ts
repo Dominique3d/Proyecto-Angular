@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EstudianteService } from 'src/app/services/estudiante.service';
-import { Estudiante } from 'src/app/interfaces/estudiante.interface';
-import { ModalEditarEstudianteService } from 'src/app/services/modal-editar-estudiante.service';
+import { PersonaService } from 'src/app/services/persona.service';
+import { Persona } from 'src/app/interfaces/persona.interface';
+import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
+import { LoginService } from 'src/app/services/login/login.service';
+
 
 @Component({
   selector: 'app-perfil-instructor',
@@ -11,23 +13,31 @@ import { ModalEditarEstudianteService } from 'src/app/services/modal-editar-estu
 })
 export class PerfilInstructorComponent implements OnInit {
 
-  estudiantes: any[]=[];
+  usuario: any[]=[];
+  persona : Persona;
+  userEmail : string = "";
 
   constructor( 
-    public modalEditarEstudianteService: ModalEditarEstudianteService,
-    private estudianteService: EstudianteService
+    public modalEditarPersonaService: ModalEditarPersonaService,
+    private personaService: PersonaService,
+    public loginService : LoginService
   ) { }
 
   ngOnInit(): void {
-    this.estudianteService.getAllEstudiantes().subscribe((res:any[]) => {
-      this.estudiantes = res;
-      console.log(this.estudiantes);
-    },
-    err => console.log(err))
+    this.getDatos();
+    if (localStorage.getItem('email') != null) {
+      this.userEmail = localStorage.getItem('email')!;
+    }
   }
 
+  getDatos(){
+    this.personaService.getDatosUsuario(this.userEmail).subscribe((res:any) => {
+    this.usuario = res;
+    console.log(this.usuario);
+  });
+}
 
   abrirModal(){
-    this.modalEditarEstudianteService.mostrarModal();
+    this.modalEditarPersonaService.mostrarModal(this.persona);
   }
 }

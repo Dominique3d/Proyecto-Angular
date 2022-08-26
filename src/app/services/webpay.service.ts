@@ -32,7 +32,7 @@ export class WebpayService {
   }
 
   callAPI() {
-    this.http.post('http://localhost:3000/api/token', this.token).subscribe((data: any) => {
+    this.http.post('http://localhost:8080/api/token', this.token).subscribe((data: any) => {
       (<HTMLFormElement>document.getElementById("webpay-form")).action=data.url;
       (<HTMLInputElement>document.getElementById("token")).value=data.token;
       (<HTMLFormElement>document.getElementById("webpay-form")).submit();

@@ -29,6 +29,14 @@
     color: #176496 !important;
 }
 
+.scroll > div > div > div > div > a > strong{
+    color: #5DA23E;
+}
+
+.scroll > div > div > div > div > a > strong:hover{
+    color: #176496 !important;
+}
+
 .scroll > div > a > div{
     background: url('/assets/logo-1.png');
 }

@@ -28,30 +28,33 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mb-2 mb-lg-0" >
-                <a  style="margin-left: 25px;" href="#" [routerLink]="['home']"  class="nav-item nav-link active nav-font">
+                <div>   <a  style="margin-left: 25px;" href="#" [routerLink]="['home']"  class="nav-item nav-link active nav-font"> 
                     <strong>INICIO</strong>
-                </a>
+                </a> </div>
                 <a  style="margin-left: 25px;"href="#" [routerLink]="['curso-claseB']" class="nav-item nav-link active nav-font">
                     <strong>CLASE B</strong>
                 </a>
                 <a  style="margin-left: 25px;"href="#" [routerLink]="['contacto']" class="nav-item nav-link active nav-font">
                     <strong>CONTACTO</strong>
                 </a>
-                <a  style="margin-left: 25px;"href="#" [routerLink]="['recepcion']"class="nav-item nav-link active nav-font">
+                <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['recepcion']"class="nav-item nav-link active nav-font">
                     <strong>PERFIL RECEPCIÓN</strong>
-                </a>
-                <a  style="margin-left: 25px;"href="#" [routerLink]="['alumno']"class="nav-item nav-link active nav-font">
+                </a> </div>
+                <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['alumno']"class="nav-item nav-link active nav-font">
                     <strong>PERFIL ESTUDIANTE</strong>
-                </a>
-                <a  style="margin-left: 25px;"href="#" [routerLink]="['instructor']"class="nav-item nav-link active nav-font">
+                </a> </div>
+                <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['instructor']"class="nav-item nav-link active nav-font">
                     <strong>PERFIL INSTRUCTOR</strong>
-                </a>
-                <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">
+                </a> </div>
+                <div *ngIf = "rol =='' || rol== null "> <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font"> 
                     <strong>INICIAR SESIÓN</strong>
-                </a>
-                <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">
+                </a></div>
+                <!-- <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">
                     <strong style="background-color: red; padding: 10px">CERRAR SESIÓN</strong>
-                </a>
+                </a> -->
+                <div *ngIf = "rol != '' || rol == null">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="cerrarSesion()">  CERRAR SESIÓN </button>
+                </div>
             </div>
         </div>
     </div>

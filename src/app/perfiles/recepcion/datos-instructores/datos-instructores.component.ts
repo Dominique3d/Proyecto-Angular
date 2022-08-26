@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PersonaService } from 'src/app/services/persona.service';
+import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
+import { Persona } from 'src/app/interfaces/persona.interface';
 
 @Component({
   selector: 'app-datos-instructores',
@@ -6,11 +10,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datos-instructores.component.css']
 })
 export class DatosInstructoresComponent implements OnInit {
-  instructores: any[] = []
+  instructoresCargados: boolean = false;
+  instructores: any[]=[];
 
-  constructor() { }
+  constructor(
+    public modalEditarPersonaService: ModalEditarPersonaService,
+    private personaService: PersonaService
+  ) { }
 
   ngOnInit(): void {
+    this.getInstructores();
+    
+  }
+  getInstructores() {
+    this.personaService.getAllInstructores().subscribe((res) => {
+      this.instructores = res;
+      console.log(this.instructores);
+      this.instructoresCargados = true;
+    });
   }
 
+  abrirModal(instructor: Persona){
+    this.modalEditarPersonaService.mostrarModal(instructor);
+  }
 }
+

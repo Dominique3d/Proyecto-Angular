@@ -1,4 +1,6 @@
-export interface Estudiante {
+import { Clase } from "./clase.interface"
+export interface Persona {
+    id: number;
     rut: string;
     nombres: string;
     primerApellido: string;
@@ -7,4 +9,5 @@ export interface Estudiante {
     contrasena: string;
     telefono: number;
     role: string;
+    instructorAsignadoId: number;
 }
