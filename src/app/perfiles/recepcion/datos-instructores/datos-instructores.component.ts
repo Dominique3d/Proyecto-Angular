@@ -9,6 +9,7 @@ import { Persona } from 'src/app/interfaces/persona.interface';
   templateUrl: './datos-instructores.component.html',
   styleUrls: ['./datos-instructores.component.css']
 })
+
 export class DatosInstructoresComponent implements OnInit {
   instructoresCargados: boolean = false;
   instructores: any[]=[];
@@ -28,7 +29,7 @@ export class DatosInstructoresComponent implements OnInit {
     }
   }
   getInstructores() {
-    this.personaService.getAllInstructores().subscribe((res) => {
+      this.personaService.getAllInstructores().subscribe((res) => {
       this.instructores = res;
       console.log(this.instructores);
       this.instructoresCargados = true;
@@ -37,6 +38,7 @@ export class DatosInstructoresComponent implements OnInit {
 
   abrirModal(instructor: Persona){
     this.modalEditarPersonaService.NotifyNewProcessPostResponse(instructor);
+    console.log("estoy en abrirModal de app.component.ts Estudiantes");
     this.modalEditarPersonaService.mostrarModal(instructor);
   }
 }

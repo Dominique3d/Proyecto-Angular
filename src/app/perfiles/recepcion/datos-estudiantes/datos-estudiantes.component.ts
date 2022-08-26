@@ -3,10 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/services/persona.service';
 import { Persona } from 'src/app/interfaces/persona.interface';
 import { ModalEditarPersonaService } from 'src/app/services/modal-editar-persona.service';
-import { Estudiante } from 'src/app/models/IEstudiante';
-import { LoginService } from '../../../services/login/login.service';
-
-
 
 @Component({
   selector: 'app-datos-estudiantes',
@@ -15,28 +11,16 @@ import { LoginService } from '../../../services/login/login.service';
 })
 
 export class DatosEstudiantesComponent implements OnInit {
+  estudiantesCargados: boolean = false;
   estudiantes: any[]=[];
-  
-
-  datosCargados: boolean = false;
   
   p: number = 1;
   rol : string = "";
 
   constructor(
     public modalEditarPersonaService: ModalEditarPersonaService,
-    public personaService: PersonaService,
-    public loginService : LoginService) { }
-
-  /*
-  ngOnInit(): void {
-    this.personaService.getAllEstudiantes().subscribe((res:any[]) => {
-      this.estudiantes = res;
-      console.log(this.estudiantes);
-    },
-    err => console.log(err))
-  }
-  */
+    private personaService: PersonaService
+    ) { }
   
   ngOnInit(): void {
     this.getEstudiantes();
@@ -44,11 +28,11 @@ export class DatosEstudiantesComponent implements OnInit {
       this.rol = localStorage.getItem('rol')!;
     }
   }
-
   getEstudiantes(){
-      this.personaService.getAllEstudiantes().subscribe((res:any[]) => {
+      this.personaService.getAllEstudiantes().subscribe((res) => {
       this.estudiantes = res;
       console.log(this.estudiantes);
+      this.estudiantesCargados = true;
     });
   }
 
@@ -57,8 +41,15 @@ export class DatosEstudiantesComponent implements OnInit {
     console.log("estoy en abrirModal de app.component.ts Estudiantes");
     this.modalEditarPersonaService.mostrarModal(estudiante);
   }
-
-  cerrarSesion() {
-    this.loginService.logout();
-  }
 }
+
+
+ /*
+  ngOnInit(): void {
+    this.personaService.getAllEstudiantes().subscribe((res:any[]) => {
+      this.estudiantes = res;
+      console.log(this.estudiantes);
+    },
+    err => console.log(err))
+  }
+  */
