@@ -37,21 +37,18 @@
                 <a  style="margin-left: 25px;"href="#" [routerLink]="['contacto']" class="nav-item nav-link active nav-font">
                     <strong>CONTACTO</strong>
                 </a>
-                <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['recepcion']"class="nav-item nav-link active nav-font">
-                    <strong>PERFIL RECEPCIÓN</strong>
+                <div *ngIf = "rol =='recepcion'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['recepcion']"class="nav-item nav-link active nav-font">
+                    <strong>PERFIL</strong>
                 </a> </div>
                 <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['alumno']"class="nav-item nav-link active nav-font">
-                    <strong>PERFIL ESTUDIANTE</strong>
+                    <strong>PERFIL</strong>
                 </a> </div>
-                <div *ngIf = "rol =='estudiante'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['instructor']"class="nav-item nav-link active nav-font">
-                    <strong>PERFIL INSTRUCTOR</strong>
+                <div *ngIf = "rol =='instructor'"> <a  style="margin-left: 25px;"href="#" [routerLink]="['instructor']"class="nav-item nav-link active nav-font">
+                    <strong>PERFIL</strong>
                 </a> </div>
                 <div *ngIf = "rol =='' || rol== null "> <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font"> 
                     <strong>INICIAR SESIÓN</strong>
                 </a></div>
-                <!-- <a  style="margin-left: 25px;"href="#" [routerLink]="['login']"class="nav-item nav-link active nav-font">
-                    <strong style="background-color: red; padding: 10px">CERRAR SESIÓN</strong>
-                </a> -->
                 <div *ngIf = "rol != '' || rol == null">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="cerrarSesion()">  CERRAR SESIÓN </button>
                 </div>
