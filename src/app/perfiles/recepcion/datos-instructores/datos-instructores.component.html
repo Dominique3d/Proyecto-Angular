@@ -1,5 +1,5 @@
 <div class="fondo">
-  <div class="big-container">
+  <div class="big-container" style="padding-bottom: 50px;">
     <div class="container" style="padding-left: 0; padding-right: 0">
       <div class="bannerVerde"></div>
       <div class="Instructores">Instructores</div>
@@ -13,7 +13,7 @@
           margin: auto;
         "
       >
-        <div class="recordatorio" style="border-radius: 20px; margin-left: 18px;">
+        <div *ngIf="instructoresCargados" class="recordatorio" style="border-radius: 20px; margin-left: 18px; height: fit-content;">
           <div class="table-responsive">
             <table class="table">
               <thead>
@@ -27,7 +27,7 @@
               </thead>
               <tbody *ngFor="let instructor of instructores">
                 <tr>
-                  <td scope="row">{{instructor.nombre}}</td>
+                  <td scope="row">{{instructor.nombres}}</td>
                   <td>{{instructor.email}}</td>
                   <td>{{instructor.telefono}}</td>
                   <td><button style="    color: white;

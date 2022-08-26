@@ -10,6 +10,7 @@ import { Persona } from 'src/app/interfaces/persona.interface';
   styleUrls: ['./datos-instructores.component.css']
 })
 export class DatosInstructoresComponent implements OnInit {
+  instructoresCargados: boolean = false;
   instructores: any[]=[];
 
   constructor(
@@ -18,14 +19,19 @@ export class DatosInstructoresComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.personaService.getAllInstructores().subscribe((res:any[]) => {
+    this.getInstructores();
+    
+  }
+  getInstructores() {
+    this.personaService.getAllInstructores().subscribe((res) => {
       this.instructores = res;
       console.log(this.instructores);
-    },
-    err => console.log(err))
+      this.instructoresCargados = true;
+    });
   }
 
   abrirModal(instructor: Persona){
     this.modalEditarPersonaService.mostrarModal(instructor);
   }
 }
+
