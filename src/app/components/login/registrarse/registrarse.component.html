@@ -5,50 +5,10 @@
 
 </head>
 
-<div>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
-
 <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ductos Ortiz</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">¿Quiénes somos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="seguimiento">Pedidos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contactanos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="login">Ingreso Funcionarios</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <main class="main">
 
-        <div class="card" style="width: 55%; padding: 2%;">
+        <div class="card" style="width: 36%; padding: 2%;">
 
             <div class="container">
 
@@ -80,8 +40,8 @@
                                         formControlName="contraseña">
                                 </div>
                                 <br>
-                
-                                <button type="submit" id="sesion" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+                                <button type="submit" id="sesion" class="btn btn-primary" style="margin-left: 160px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Registrarse
                                   </button>
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -97,7 +57,7 @@
                                                 El usuario ha sido creado con éxito
                                             </div>
                                             <div class="modal-footer">
-    
+
                                                 <button type="button" class="btn btn-primary"
                                                     data-bs-dismiss="modal" routerLink="/login">Aceptar</button>
                                             </div>
@@ -118,14 +78,6 @@
         <br>
         <br>
     </div>
-
-    <footer class="footer py-0 bg-dark fixed-bottom text-center">
-        <div class="container">
-            <span class="text-white">Ingeniería Civil en Informática</span>
-            <br>
-            <span class="text-white">Universidad del Bío-Bío - Todos los derechos reservados © 2021</span>
-        </div>
-    </footer>
 </body>
 
 </html>
