@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Persona } from '../interfaces/persona.interface';
 
 @Injectable({
@@ -21,5 +21,11 @@ export class ModalEditarPersonaService {
     
     this.oculto = 'block';
     console.log('Mostrar modal editar persona MODAL EDITAR PERSONA SERVICE ' + this.personaSelect.nombres);
+  }
+
+  EmitirPersonaEvent = new EventEmitter<Persona>();
+
+  NotifyNewProcessPostResponse(respuesta: Persona){
+    this.EmitirPersonaEvent.emit(respuesta);
   }
 }

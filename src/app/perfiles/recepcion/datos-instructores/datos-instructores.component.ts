@@ -12,6 +12,9 @@ import { Persona } from 'src/app/interfaces/persona.interface';
 export class DatosInstructoresComponent implements OnInit {
   instructoresCargados: boolean = false;
   instructores: any[]=[];
+  
+  p: number = 1;
+  rol : string = "";
 
   constructor(
     public modalEditarPersonaService: ModalEditarPersonaService,
@@ -20,7 +23,9 @@ export class DatosInstructoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInstructores();
-    
+    if (localStorage.getItem('rol') != null) {
+      this.rol = localStorage.getItem('rol')!;
+    }
   }
   getInstructores() {
     this.personaService.getAllInstructores().subscribe((res) => {
@@ -31,6 +36,7 @@ export class DatosInstructoresComponent implements OnInit {
   }
 
   abrirModal(instructor: Persona){
+    this.modalEditarPersonaService.NotifyNewProcessPostResponse(instructor);
     this.modalEditarPersonaService.mostrarModal(instructor);
   }
 }
