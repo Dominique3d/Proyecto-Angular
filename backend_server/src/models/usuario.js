@@ -2,11 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('./index');
 const bcrypt = require("bcrypt");
 
-class Persona extends Model {}
-Persona.init({
-      userId: {
-        type: DataTypes.STRING
-      },
+class Usuario extends Model {}
+Usuario.init({
       userName: {
         type: DataTypes.STRING
       },
@@ -16,11 +13,8 @@ Persona.init({
       userPassword: {
         type: DataTypes.STRING
       },
-
-      // Si es 0 es usuario normal y si es 1 es administrador
-      userRole: {
-          type: DataTypes.INTEGER,
-          defaultValue: 0
+      userRol: {
+          type: DataTypes.STRING,
       },
       userToken: {
         type: DataTypes.STRING,
@@ -30,4 +24,4 @@ Persona.init({
       modelName: "usuario",
       timestamps: false
     });
-  module.exports = Persona;
+  module.exports = Usuario;

@@ -224,7 +224,7 @@ app.post('/login', (req, res) => {
       res.status(200).json({
           ok: true,
           usuario: results,
-          id: results[0].userId,
+          id: results[0].id,
           token: token
       });
   });
