@@ -30,7 +30,11 @@ Persona.init({
       role: {
           type: DataTypes.INTEGER,
           defaultValue: 0
-      }
+      },
+
+      // idInstructorAsignado: {
+      //   type: DataTypes.INTEGER
+      // }
     }, {
       instanceMethods: {
         generateHash(contrasena) {

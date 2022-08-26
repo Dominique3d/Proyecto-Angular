@@ -8,6 +8,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class NavbarComponent implements OnInit {
 
+
   @HostListener('window:scroll', []) onWindowScroll(){
     let navbar = document.getElementById("contenido");
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ModalEditarPersonaService } from './modal-editar-persona.service';
 
-describe('ModalEditarEstudianteService', () => {
+describe('ModalEditarPersonaService', () => {
   let service: ModalEditarPersonaService;
 
   beforeEach(() => {

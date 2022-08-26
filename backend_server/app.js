@@ -122,6 +122,13 @@ app.use('/api/planes', require('./src/controllers/plan-controlador'));
 app.listen(8080, () => {
   console.log('Express Server - puerto 8080 online');
 });
+// Conectase a la base de datos
+  // Force true: DROP TABLES
+  sequelize.sync({ force: false }).then(() => {
+    console.log("Nos hemos conectado a la base de datos");
+  }).catch(error => {
+    console.log('Se ha producido un error', error);
+  })
 
 // Conectase a la base de datos
   // Force true: DROP TABLES
