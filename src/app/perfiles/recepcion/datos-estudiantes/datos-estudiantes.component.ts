@@ -18,7 +18,7 @@ export class DatosEstudiantesComponent implements OnInit {
   estudiantes: any[]=[];
   
 
-  clientesCargados: boolean = false;
+  datosCargados: boolean = false;
   
   p: number = 1;
   rol : string = "";
@@ -53,6 +53,7 @@ export class DatosEstudiantesComponent implements OnInit {
   }
 
   abrirModal(estudiante: Persona){
+    this.modalEditarPersonaService.NotifyNewProcessPostResponse(estudiante);
     console.log("estoy en abrirModal de app.component.ts Estudiantes");
     this.modalEditarPersonaService.mostrarModal(estudiante);
   }

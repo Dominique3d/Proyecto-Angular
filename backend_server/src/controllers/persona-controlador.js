@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
         primerApellido: req.body.primerApellido,
         segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contrasena: bcrypt.hashSync(req.body.contraseña, 8),
+        contrasena: bcrypt.hashSync(req.body.contrasena, 8),
         telefono: req.body.telefono,
         role: req.body.role,
         instructorAsignadoId: req.body.instructorAsignadoId
@@ -49,14 +49,13 @@ router.get('/getAllInstructores', (req, res) => {
 });
 
 // UPDATE /api/personas
-router.post('/update/:id', (req, res) => {
+router.put('/update/:id', (req, res) => {
     Persona.update({
         rut: req.body.rut,
         nombres: req.body.nombres,
         primerApellido: req.body.primerApellido,
         segundoApellido: req.body.segundoApellido,
         email: req.body.email,
-        contrasena: bcrypt.hashSync(req.body.contraseña, 8),
         telefono: req.body.telefono,
         role: req.body.role,
         instructorAsignadoId: req.body.instructorAsignadoId
