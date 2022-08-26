@@ -29,4 +29,5 @@ export class FormularioComponent implements OnInit {
     // this.webpay.initTransaction(1000, this.pagoForm.value.email);
     this.webpay.callAPI();
   }
+  
 }

@@ -35,4 +35,12 @@ export class ModalAgendaComponent implements OnInit {
   saveData(){
     console.log(this.formAgenda.value);
   }
+
+  clickMethod(name: string) {
+    if(confirm("Reserva realizada exitosamente")) {
+     
+      
+    }
+  }
+
 }
