@@ -84,4 +84,13 @@ router.get('/getAllEstudiantesByIdInstructor/:id', (req, res) => {
     }).then(personas => res.json(personas));
 });
 
+// mostrar todos los estudiantes
+router.get('/getDatosUsuario/:email', (req, res) => {
+    Persona.findAll({
+        where: {
+            email : req.params.email
+        }
+    }).then(personas => res.json(personas));
+});
+
 module.exports = router;
